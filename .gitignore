@@ -1,0 +1,14 @@
+notebooks/full.csv
+notebooks/small.csv
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+venv/
+.venv/
+
+.vscode/
+
+.DS_Store
+Thumbs.db

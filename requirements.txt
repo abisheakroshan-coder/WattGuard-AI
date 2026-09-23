@@ -1,0 +1,2332 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+from pathlib import Path
+
+
+# =========================================================
+# PAGE CONFIG
+# =========================================================
+
+st.set_page_config(
+    page_title="WattGuard AI",
+    page_icon="⚡",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+
+# =========================================================
+# FILE PATHS
+# =========================================================
+
+ROOT = Path(__file__).resolve().parents[1]
+
+OUTPUT_FILE = ROOT / "data" / "wattguard_output.csv"
+FULL_DATA_FILE = ROOT / "notebooks" / "full.csv"
+
+
+# =========================================================
+# CUSTOM DESIGN
+# =========================================================
+
+st.markdown(
+    """
+    <style>
+
+    @import url(
+    'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap'
+    );
+
+    :root {
+        --bg: #e9edf2;
+        --panel: #ffffff;
+        --panel2: #f1f4f7;
+
+        --border: #c4ced8;
+        --grid: #d8dfe6;
+
+        --text: #152238;
+        --muted: #566579;
+        --faint: #78889a;
+
+        --accent: #205f86;
+
+        --ok: #167d69;
+        --ok-bg: #e2f2ed;
+
+        --warn: #a8670d;
+        --warn-bg: #f5ead6;
+
+        --danger: #af3c29;
+        --danger-bg: #f5dfda;
+
+        --mono: 'IBM Plex Mono', monospace;
+        --display: 'Space Grotesk', sans-serif;
+    }
+
+
+    /* MAIN BACKGROUND */
+
+    .stApp {
+
+        background:
+
+        linear-gradient(
+        rgba(211,219,228,0.34) 1px,
+        transparent 1px
+        )
+
+        0 0 / 36px 36px,
+
+        linear-gradient(
+        90deg,
+        rgba(211,219,228,0.34) 1px,
+        transparent 1px
+        )
+
+        0 0 / 36px 36px,
+
+        var(--bg);
+
+        color: var(--text);
+
+        font-family: var(--display);
+    }
+
+
+    .block-container {
+
+        max-width: 1280px;
+
+        padding-top: 1.3rem;
+
+        padding-bottom: 4rem;
+
+        padding-left: 2rem;
+
+        padding-right: 2rem;
+    }
+
+
+    /* HIDE STREAMLIT DECORATION */
+
+    #MainMenu {
+        visibility: hidden;
+    }
+
+    footer {
+        visibility: hidden;
+    }
+
+    header[data-testid="stHeader"] {
+        background: transparent;
+    }
+
+
+    /* HEADER */
+
+    .wg-header {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .wg-brand {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+
+    .wg-logo {
+
+        width: 40px;
+
+        height: 40px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        background: var(--accent);
+
+        color: white;
+
+        font-size: 23px;
+
+        font-weight: 700;
+
+        border-radius: 3px;
+    }
+
+
+    .wg-title {
+
+        font-size: 24px;
+
+        font-weight: 700;
+
+        margin: 0;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .wg-subtitle {
+
+        color: var(--faint);
+
+        font-size: 12px;
+
+        font-family: var(--mono);
+
+        margin-top: 2px;
+    }
+
+
+    .live-pill {
+
+        border: 1px solid var(--border);
+
+        padding: 7px 11px;
+
+        font-family: var(--mono);
+
+        font-size: 11px;
+
+        background: var(--panel);
+    }
+
+
+    .live-dot {
+
+        color: var(--ok);
+    }
+
+
+    /* FLOW BAR */
+
+    .flowbar {
+
+        height: 2px;
+
+        width: 100%;
+
+        background: var(--border);
+
+        margin-bottom: 22px;
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .flowbar:after {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: -20%;
+
+        width: 25%;
+
+        height: 100%;
+
+        background:
+        linear-gradient(
+        90deg,
+        transparent,
+        #205f86,
+        transparent
+        );
+
+        animation: flow 4s linear infinite;
+    }
+
+
+    @keyframes flow {
+
+        from {
+            left: -25%;
+        }
+
+        to {
+            left: 100%;
+        }
+    }
+
+
+    /* PIPELINE */
+
+    .pipeline {
+
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .pipe {
+
+        background: var(--panel2);
+
+        border: 1px solid var(--border);
+
+        padding: 11px 13px;
+
+        min-height: 74px;
+    }
+
+
+    .pipe-number {
+
+        font-family: var(--mono);
+
+        color: var(--accent);
+
+        font-size: 10px;
+    }
+
+
+    .pipe-title {
+
+        font-weight: 600;
+
+        margin-top: 4px;
+
+        font-size: 13px;
+    }
+
+
+    .pipe-sub {
+
+        color: var(--muted);
+
+        font-size: 11px;
+
+        margin-top: 2px;
+    }
+
+
+    /* SECTION LABEL */
+
+    .section-label {
+
+        font-family: var(--mono);
+
+        font-size: 11px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1.2px;
+
+        color: var(--faint);
+
+        margin-bottom: 7px;
+
+        margin-top: 4px;
+    }
+
+
+    /* KPI */
+
+    .kpi-card {
+
+        background: var(--panel);
+
+        border: 1px solid var(--border);
+
+        border-left: 3px solid var(--accent);
+
+        padding: 15px 16px;
+
+        min-height: 90px;
+    }
+
+
+    .kpi-card.warning {
+
+        border-left-color: var(--warn);
+    }
+
+
+    .kpi-card.danger {
+
+        border-left-color: var(--danger);
+    }
+
+
+    .kpi-card.success {
+
+        border-left-color: var(--ok);
+    }
+
+
+    .kpi-number {
+
+        font-family: var(--mono);
+
+        font-size: 25px;
+
+        font-weight: 600;
+
+        color: var(--text);
+    }
+
+
+    .kpi-label {
+
+        font-size: 12px;
+
+        margin-top: 3px;
+
+        color: var(--muted);
+    }
+
+
+    /* PANELS */
+
+    .panel {
+
+        background: var(--panel);
+
+        border: 1px solid var(--border);
+
+        padding: 17px 18px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .panel-title {
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        margin-bottom: 3px;
+    }
+
+
+    .panel-sub {
+
+        font-size: 12px;
+
+        color: var(--muted);
+
+        margin-bottom: 12px;
+    }
+
+
+    /* RISK BADGES */
+
+    .risk-critical {
+
+        color: var(--danger);
+
+        background: var(--danger-bg);
+
+        border: 1px solid #e7b9af;
+
+        padding: 5px 9px;
+
+        display: inline-block;
+
+        font-family: var(--mono);
+
+        font-size: 11px;
+    }
+
+
+    .risk-high {
+
+        color: var(--warn);
+
+        background: var(--warn-bg);
+
+        border: 1px solid #e3c995;
+
+        padding: 5px 9px;
+
+        display: inline-block;
+
+        font-family: var(--mono);
+
+        font-size: 11px;
+    }
+
+
+    .risk-low {
+
+        color: var(--ok);
+
+        background: var(--ok-bg);
+
+        border: 1px solid #b8ddcf;
+
+        padding: 5px 9px;
+
+        display: inline-block;
+
+        font-family: var(--mono);
+
+        font-size: 11px;
+    }
+
+
+    /* DETAIL */
+
+    .consumer-head {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: flex-start;
+
+        border-bottom: 1px solid var(--border);
+
+        padding-bottom: 14px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .consumer-id {
+
+        font-family: var(--mono);
+
+        font-size: 20px;
+
+        font-weight: 600;
+    }
+
+
+    .risk-big {
+
+        font-family: var(--mono);
+
+        font-size: 32px;
+
+        font-weight: 600;
+
+        text-align: right;
+    }
+
+
+    .risk-caption {
+
+        color: var(--faint);
+
+        font-size: 11px;
+
+        text-align: right;
+    }
+
+
+    /* FIELD NOTE */
+
+    .field-note {
+
+        background: var(--panel2);
+
+        border-left: 3px solid var(--accent);
+
+        padding: 13px 15px;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+
+        color: var(--text);
+    }
+
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+
+        border: 1px dashed var(--border);
+
+        background: var(--panel2);
+
+        padding: 10px 12px;
+
+        font-size: 11px;
+
+        color: var(--muted);
+
+        margin-top: 12px;
+    }
+
+
+    /* STREAMLIT BUTTONS */
+
+    .stButton button {
+
+        border-radius: 3px !important;
+
+        border: 1px solid var(--border) !important;
+
+        box-shadow: none !important;
+
+        font-family: var(--display) !important;
+
+        font-weight: 500 !important;
+    }
+
+
+    /* INPUTS */
+
+    div[data-baseweb="select"] > div {
+
+        border-radius: 3px !important;
+    }
+
+
+    /* DATAFRAME */
+
+    div[data-testid="stDataFrame"] {
+
+        border: 1px solid var(--border);
+    }
+
+
+    /* RADIO NAV */
+
+    div[role="radiogroup"] {
+
+        background: var(--panel);
+
+        border: 1px solid var(--border);
+
+        padding: 5px;
+
+        margin-bottom: 17px;
+    }
+
+
+    /* MOBILE */
+
+    @media(max-width: 850px) {
+
+        .pipeline {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .wg-header {
+            flex-direction: column;
+        }
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# DATA LOADING
+# =========================================================
+
+@st.cache_data
+def load_output():
+
+    if not OUTPUT_FILE.exists():
+
+        return None
+
+    data = pd.read_csv(OUTPUT_FILE)
+
+    if "Consumer_ID" in data.columns:
+        data["Consumer_ID"] = data["Consumer_ID"].astype(str)
+
+    return data
+
+
+@st.cache_data
+def load_full_dataset():
+
+    if not FULL_DATA_FILE.exists():
+
+        return None
+
+    return pd.read_csv(FULL_DATA_FILE)
+
+
+df = load_output()
+
+raw_df = load_full_dataset()
+
+
+# =========================================================
+# ERROR IF DATA MISSING
+# =========================================================
+
+if df is None:
+
+    st.error(
+        "WattGuard output file was not found."
+    )
+
+    st.code(
+        """
+dashboard_data = wattguard.drop(
+    columns=["Actual_Label"],
+    errors="ignore"
+)
+
+dashboard_data.to_csv(
+    "../data/wattguard_output.csv",
+    index=False
+)
+        """
+    )
+
+    st.stop()
+
+
+# =========================================================
+# REQUIRED COLUMNS CHECK
+# =========================================================
+
+required_columns = [
+
+    "Consumer_ID",
+    "Risk_Score",
+    "Risk_Level",
+    "Estimated_Unbilled_Units",
+    "Priority_Score",
+    "Why_Flagged",
+    "Action"
+]
+
+
+missing_columns = [
+
+    col
+    for col in required_columns
+    if col not in df.columns
+
+]
+
+
+if missing_columns:
+
+    st.error(
+        "Missing columns: "
+        + ", ".join(missing_columns)
+    )
+
+    st.stop()
+
+
+# numeric cleanup
+
+numeric_columns = [
+
+    "Risk_Score",
+    "Estimated_Unbilled_Units",
+    "Priority_Score"
+]
+
+
+for column in numeric_columns:
+
+    df[column] = pd.to_numeric(
+        df[column],
+        errors="coerce"
+    ).fillna(0)
+
+
+# =========================================================
+# HELPERS
+# =========================================================
+
+def metric_card(
+    number,
+    label,
+    style=""
+):
+
+    return f"""
+    <div class="kpi-card {style}">
+        <div class="kpi-number">
+            {number}
+        </div>
+
+        <div class="kpi-label">
+            {label}
+        </div>
+    </div>
+    """
+
+
+def risk_badge(level):
+
+    level = str(level).upper()
+
+    if level == "CRITICAL":
+
+        return """
+        <span class="risk-critical">
+        CRITICAL
+        </span>
+        """
+
+    elif level == "HIGH":
+
+        return """
+        <span class="risk-high">
+        HIGH
+        </span>
+        """
+
+    else:
+
+        return f"""
+        <span class="risk-low">
+        {level}
+        </span>
+        """
+
+
+def consumer_index_from_id(
+    consumer_id
+):
+
+    try:
+
+        return int(
+            str(consumer_id)
+            .replace("WG-", "")
+        )
+
+    except:
+
+        return None
+
+
+def get_history(
+    consumer_id
+):
+
+    if raw_df is None:
+
+        return None
+
+    idx = consumer_index_from_id(
+        consumer_id
+    )
+
+    if idx is None:
+
+        return None
+
+    if idx not in raw_df.index:
+
+        return None
+
+
+    row = raw_df.loc[idx]
+
+
+    history = []
+
+
+    for column in raw_df.columns:
+
+        date_value = pd.to_datetime(
+            column,
+            errors="coerce"
+        )
+
+        if pd.isna(date_value):
+
+            continue
+
+
+        value = pd.to_numeric(
+            row[column],
+            errors="coerce"
+        )
+
+
+        if pd.isna(value):
+
+            continue
+
+
+        history.append(
+            {
+                "Date": date_value,
+                "Usage": float(value)
+            }
+        )
+
+
+    if not history:
+
+        return None
+
+
+    result = pd.DataFrame(history)
+
+    result = result.sort_values(
+        "Date"
+    )
+
+
+    result["30-Day Average"] = (
+
+        result["Usage"]
+        .rolling(
+            window=30,
+            min_periods=1
+        )
+        .mean()
+
+    )
+
+
+    return result
+
+
+def create_field_note(row):
+
+    reasons = str(
+        row["Why_Flagged"]
+    ).replace(
+        "|",
+        ","
+    )
+
+
+    return (
+
+        f"{row['Consumer_ID']} was prioritised because "
+        f"its consumption behaviour differs from the normal pattern. "
+        f"Key indicators: {reasons}. "
+        f"The model estimates approximately "
+        f"{row['Estimated_Unbilled_Units']:.1f} units of possible "
+        f"unexplained consumption. "
+        f"Recommended action: {row['Action'].lower()}."
+    )
+
+
+# =========================================================
+# HEADER
+# =========================================================
+
+st.markdown(
+    """
+    <div class="wg-header">
+
+        <div class="wg-brand">
+
+            <div class="wg-logo">
+                ⚡
+            </div>
+
+            <div>
+
+                <div class="wg-title">
+                    WattGuard AI
+                </div>
+
+                <div class="wg-subtitle">
+                    PS-AI05 · POWER THEFT &
+                    UNBILLED LOAD INVESTIGATION SYSTEM
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="live-pill">
+            <span class="live-dot">
+                ●
+            </span>
+            SYSTEM READY · SGCC MODEL
+        </div>
+
+    </div>
+
+    <div class="flowbar"></div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# PIPELINE
+# =========================================================
+
+st.markdown(
+    """
+    <div class="pipeline">
+
+        <div class="pipe">
+            <div class="pipe-number">
+                01
+            </div>
+            <div class="pipe-title">
+                Meter history
+            </div>
+            <div class="pipe-sub">
+                Long-term consumption behaviour
+            </div>
+        </div>
+
+        <div class="pipe">
+            <div class="pipe-number">
+                02
+            </div>
+            <div class="pipe-title">
+                Behaviour analysis
+            </div>
+            <div class="pipe-sub">
+                Drops · spikes · variation
+            </div>
+        </div>
+
+        <div class="pipe">
+            <div class="pipe-number">
+                03
+            </div>
+            <div class="pipe-title">
+                AI risk
+            </div>
+            <div class="pipe-sub">
+                Suspicion score, not accusation
+            </div>
+        </div>
+
+        <div class="pipe">
+            <div class="pipe-number">
+                04
+            </div>
+            <div class="pipe-title">
+                Loss estimate
+            </div>
+            <div class="pipe-sub">
+                Possible unbilled consumption
+            </div>
+        </div>
+
+        <div class="pipe">
+            <div class="pipe-number">
+                05
+            </div>
+            <div class="pipe-title">
+                Human action
+            </div>
+            <div class="pipe-sub">
+                Prioritise · inspect · verify
+            </div>
+        </div>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# NAVIGATION
+# =========================================================
+
+page = st.radio(
+
+    "Navigation",
+
+    [
+        "Command Center",
+        "Consumer Investigation",
+        "Field Queue",
+        "Model Card"
+    ],
+
+    horizontal=True,
+
+    label_visibility="collapsed"
+)
+
+
+# =========================================================
+# PAGE 1 — COMMAND CENTER
+# =========================================================
+
+if page == "Command Center":
+
+
+    st.markdown(
+        '<div class="section-label">'
+        'OPERATIONS OVERVIEW'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+
+    total_consumers = len(df)
+
+
+    high_cases = (
+
+        df["Risk_Score"] >= 45
+
+    ).sum()
+
+
+    critical_cases = (
+
+        df["Risk_Score"] >= 70
+
+    ).sum()
+
+
+    possible_units = (
+
+        df.loc[
+
+            df["Risk_Score"] >= 45,
+
+            "Estimated_Unbilled_Units"
+
+        ]
+
+        .clip(lower=0)
+
+        .sum()
+
+    )
+
+
+    c1, c2, c3, c4 = st.columns(4)
+
+
+    with c1:
+
+        st.markdown(
+
+            metric_card(
+
+                f"{total_consumers:,}",
+
+                "Consumers analysed"
+
+            ),
+
+            unsafe_allow_html=True
+
+        )
+
+
+    with c2:
+
+        st.markdown(
+
+            metric_card(
+
+                f"{high_cases:,}",
+
+                "High-risk investigations",
+
+                "warning"
+
+            ),
+
+            unsafe_allow_html=True
+
+        )
+
+
+    with c3:
+
+        st.markdown(
+
+            metric_card(
+
+                f"{critical_cases:,}",
+
+                "Critical cases",
+
+                "danger"
+
+            ),
+
+            unsafe_allow_html=True
+
+        )
+
+
+    with c4:
+
+        st.markdown(
+
+            metric_card(
+
+                f"{possible_units:,.0f}",
+
+                "Possible unbilled units",
+
+                "success"
+
+            ),
+
+            unsafe_allow_html=True
+
+        )
+
+
+    st.write("")
+
+
+    # -----------------------------------------------------
+    # INSPECTION CAPACITY
+    # -----------------------------------------------------
+
+    st.markdown(
+        '<div class="section-label">'
+        'FIELD RESOURCE PLANNING'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+
+    left, right = st.columns(
+        [1.8, 1]
+    )
+
+
+    with left:
+
+        st.markdown(
+            """
+            <div class="panel">
+            <div class="panel-title">
+                Priority investigation queue
+            </div>
+
+            <div class="panel-sub">
+                Ranked by AI risk and estimated
+                unexplained consumption.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+        capacity = st.slider(
+
+            "Available inspections today",
+
+            min_value=5,
+
+            max_value=min(
+                200,
+                len(df)
+            ),
+
+            value=min(
+                25,
+                len(df)
+            ),
+
+            step=5
+
+        )
+
+
+        queue = (
+
+            df.sort_values(
+
+                "Priority_Score",
+
+                ascending=False
+
+            )
+
+            .head(capacity)
+
+        )
+
+
+        st.dataframe(
+
+            queue[
+                [
+                    "Consumer_ID",
+                    "Risk_Score",
+                    "Priority_Score",
+                    "Estimated_Unbilled_Units",
+                    "Action"
+                ]
+            ],
+
+            use_container_width=True,
+
+            hide_index=True,
+
+            height=430
+
+        )
+
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    with right:
+
+        st.markdown(
+            """
+            <div class="panel">
+
+            <div class="panel-title">
+                Risk distribution
+            </div>
+
+            <div class="panel-sub">
+                Current investigation portfolio.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+        risk_order = [
+
+            "CRITICAL",
+            "HIGH",
+            "WATCH",
+            "LOW"
+
+        ]
+
+
+        risk_counts = (
+
+            df["Risk_Level"]
+
+            .astype(str)
+
+            .str.upper()
+
+            .value_counts()
+
+            .reindex(
+                risk_order
+            )
+
+            .fillna(0)
+
+        )
+
+
+        st.bar_chart(
+            risk_counts
+        )
+
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+        top_case = (
+
+            df.sort_values(
+
+                "Priority_Score",
+
+                ascending=False
+
+            )
+
+            .iloc[0]
+
+        )
+
+
+        st.markdown(
+            f"""
+            <div class="panel">
+
+            <div class="panel-title">
+                Highest priority today
+            </div>
+
+            <div style="
+            font-family:var(--mono);
+            font-size:19px;
+            margin-top:10px;
+            ">
+
+                {top_case["Consumer_ID"]}
+
+            </div>
+
+            <div style="
+            margin-top:8px;
+            font-size:13px;
+            color:var(--muted);
+            ">
+
+                Risk
+                <b>
+                {top_case["Risk_Score"]:.1f}/100
+                </b>
+
+                · Priority
+                <b>
+                {top_case["Priority_Score"]:.1f}/100
+                </b>
+
+            </div>
+
+            <div style="
+            margin-top:10px;
+            ">
+
+                {risk_badge(
+                    top_case["Risk_Level"]
+                )}
+
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+# =========================================================
+# PAGE 2 — CONSUMER INVESTIGATION
+# =========================================================
+
+elif page == "Consumer Investigation":
+
+
+    st.markdown(
+        '<div class="section-label">'
+        'CONSUMER INVESTIGATION'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+
+    consumer = st.selectbox(
+
+        "Consumer ID",
+
+        df["Consumer_ID"].tolist()
+
+    )
+
+
+    row = (
+
+        df[
+            df["Consumer_ID"] == consumer
+        ]
+
+        .iloc[0]
+
+    )
+
+
+    st.markdown(
+        f"""
+        <div class="panel">
+
+            <div class="consumer-head">
+
+                <div>
+
+                    <div class="consumer-id">
+                        {consumer}
+                    </div>
+
+                    <div style="
+                    color:var(--muted);
+                    font-size:12px;
+                    margin-top:3px;
+                    ">
+                        Investigation profile
+                    </div>
+
+                    <div style="
+                    margin-top:9px;
+                    ">
+                        {risk_badge(
+                            row["Risk_Level"]
+                        )}
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="risk-big">
+
+                        {row["Risk_Score"]:.1f}
+
+                        <span style="
+                        font-size:13px;
+                        color:var(--muted);
+                        ">
+                            /100
+                        </span>
+
+                    </div>
+
+                    <div class="risk-caption">
+                        AI RISK SCORE
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+    a, b, c = st.columns(3)
+
+
+    with a:
+
+        st.markdown(
+
+            metric_card(
+
+                f'{row["Priority_Score"]:.1f}',
+
+                "Investigation priority",
+
+                "danger"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    with b:
+
+        st.markdown(
+
+            metric_card(
+
+                f'{row["Estimated_Unbilled_Units"]:.1f}',
+
+                "Possible unbilled units",
+
+                "warning"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    with c:
+
+        st.markdown(
+
+            metric_card(
+
+                row["Action"],
+
+                "Recommended field action",
+
+                "success"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    st.write("")
+
+
+    # -----------------------------------------------------
+    # CONSUMPTION HISTORY
+    # -----------------------------------------------------
+
+    st.markdown(
+        """
+        <div class="panel-title">
+            Consumption behaviour
+        </div>
+
+        <div class="panel-sub">
+            Raw electricity history with
+            a 30-day moving average.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+    history = get_history(
+        consumer
+    )
+
+
+    if history is not None:
+
+
+        range_choice = st.selectbox(
+
+            "History range",
+
+            [
+                "90 Days",
+                "180 Days",
+                "365 Days",
+                "Full History"
+            ]
+
+        )
+
+
+        if range_choice == "90 Days":
+
+            shown_history = (
+                history.tail(90)
+            )
+
+        elif range_choice == "180 Days":
+
+            shown_history = (
+                history.tail(180)
+            )
+
+        elif range_choice == "365 Days":
+
+            shown_history = (
+                history.tail(365)
+            )
+
+        else:
+
+            shown_history = history
+
+
+        chart_data = (
+
+            shown_history
+
+            .set_index("Date")[
+                [
+                    "Usage",
+                    "30-Day Average"
+                ]
+            ]
+
+        )
+
+
+        st.line_chart(
+            chart_data,
+            height=320
+        )
+
+
+        historical_avg = (
+            history["Usage"].mean()
+        )
+
+
+        recent_avg = (
+
+            history["Usage"]
+
+            .tail(30)
+
+            .mean()
+
+        )
+
+
+        if historical_avg > 0:
+
+            change = (
+
+                (
+                    recent_avg
+                    -
+                    historical_avg
+                )
+
+                /
+                historical_avg
+
+            ) * 100
+
+        else:
+
+            change = 0
+
+
+        h1, h2, h3 = st.columns(3)
+
+
+        h1.metric(
+
+            "Historical average",
+
+            f"{historical_avg:.1f}"
+
+        )
+
+
+        h2.metric(
+
+            "Recent 30-day average",
+
+            f"{recent_avg:.1f}"
+
+        )
+
+
+        h3.metric(
+
+            "Recent change",
+
+            f"{change:+.1f}%"
+
+        )
+
+
+    else:
+
+        st.info(
+            "Raw consumption history "
+            "is not available for this consumer."
+        )
+
+
+    # -----------------------------------------------------
+    # WHY FLAGGED
+    # -----------------------------------------------------
+
+    st.write("")
+
+
+    col_left, col_right = st.columns(
+        [1.15, 1]
+    )
+
+
+    with col_left:
+
+        st.markdown(
+            """
+            <div class="panel-title">
+                Why WattGuard flagged it
+            </div>
+
+            <div class="panel-sub">
+                Behaviour signals contributing
+                to this investigation.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+        reasons = str(
+            row["Why_Flagged"]
+        ).split("|")
+
+
+        for reason in reasons:
+
+            st.markdown(
+
+                f"""
+                <div style="
+                padding:9px 0;
+                border-bottom:
+                1px solid var(--grid);
+                font-size:13px;
+                ">
+                → {reason.strip()}
+                </div>
+                """,
+
+                unsafe_allow_html=True
+            )
+
+
+    with col_right:
+
+        st.markdown(
+            """
+            <div class="panel-title">
+                Field note
+            </div>
+
+            <div class="panel-sub">
+                Short investigation summary
+                for the inspection team.
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+        st.markdown(
+
+            f"""
+            <div class="field-note">
+
+                {create_field_note(row)}
+
+            </div>
+            """,
+
+            unsafe_allow_html=True
+        )
+
+
+    st.markdown(
+        """
+        <div class="disclaimer">
+
+        WattGuard identifies abnormal
+        consumption behaviour and
+        investigation priority.
+
+        A high-risk score is not proof of
+        electricity theft.
+
+        Final confirmation must come from
+        authorised field inspection.
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# =========================================================
+# PAGE 3 — FIELD QUEUE
+# =========================================================
+
+elif page == "Field Queue":
+
+
+    st.markdown(
+        '<div class="section-label">'
+        'FIELD OPERATIONS'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+
+    st.title(
+        "Today's inspection queue"
+    )
+
+
+    st.caption(
+        "Set the team's capacity. "
+        "WattGuard returns the highest-value "
+        "cases first."
+    )
+
+
+    capacity = st.number_input(
+
+        "Available inspections",
+
+        min_value=1,
+
+        max_value=min(
+            500,
+            len(df)
+        ),
+
+        value=min(
+            25,
+            len(df)
+        )
+
+    )
+
+
+    queue = (
+
+        df.sort_values(
+
+            "Priority_Score",
+
+            ascending=False
+
+        )
+
+        .head(
+            int(capacity)
+        )
+
+        .copy()
+
+    )
+
+
+    if "inspection_status" not in st.session_state:
+
+        st.session_state[
+            "inspection_status"
+        ] = {}
+
+
+    status_options = [
+
+        "Pending",
+
+        "Assigned",
+
+        "On-site",
+
+        "Confirmed",
+
+        "Not Confirmed",
+
+        "Needs Recheck"
+
+    ]
+
+
+    for position, (_, item) in enumerate(
+        queue.iterrows(),
+        start=1
+    ):
+
+
+        consumer_id = item["Consumer_ID"]
+
+
+        with st.expander(
+
+            f"{position:02d}  ·  "
+            f"{consumer_id}  ·  "
+            f"Risk {item['Risk_Score']:.1f}  ·  "
+            f"Priority {item['Priority_Score']:.1f}"
+
+        ):
+
+
+            c1, c2, c3 = st.columns(3)
+
+
+            c1.metric(
+
+                "Risk score",
+
+                f"{item['Risk_Score']:.1f}/100"
+
+            )
+
+
+            c2.metric(
+
+                "Possible unbilled",
+
+                f"{item['Estimated_Unbilled_Units']:.1f}"
+
+            )
+
+
+            c3.metric(
+
+                "Action",
+
+                item["Action"]
+
+            )
+
+
+            st.write(
+                "**Reason:** "
+                + str(
+                    item["Why_Flagged"]
+                )
+            )
+
+
+            current = (
+
+                st.session_state[
+                    "inspection_status"
+                ]
+
+                .get(
+                    consumer_id,
+                    "Pending"
+                )
+
+            )
+
+
+            selected_status = st.selectbox(
+
+                "Case status",
+
+                status_options,
+
+                index=status_options.index(
+                    current
+                ),
+
+                key=(
+                    "status_"
+                    + consumer_id
+                )
+
+            )
+
+
+            st.session_state[
+                "inspection_status"
+            ][consumer_id] = (
+                selected_status
+            )
+
+
+    # DOWNLOAD FIELD QUEUE
+
+    export_columns = [
+
+        "Consumer_ID",
+        "Risk_Score",
+        "Risk_Level",
+        "Estimated_Unbilled_Units",
+        "Priority_Score",
+        "Why_Flagged",
+        "Action"
+
+    ]
+
+
+    queue_csv = (
+
+        queue[export_columns]
+
+        .to_csv(
+            index=False
+        )
+
+        .encode(
+            "utf-8"
+        )
+
+    )
+
+
+    st.download_button(
+
+        "Download today's field queue",
+
+        data=queue_csv,
+
+        file_name=(
+            "wattguard_field_queue.csv"
+        ),
+
+        mime="text/csv"
+
+    )
+
+
+# =========================================================
+# PAGE 4 — MODEL CARD
+# =========================================================
+
+elif page == "Model Card":
+
+
+    st.markdown(
+        '<div class="section-label">'
+        'MODEL TRANSPARENCY'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+
+    st.title(
+        "WattGuard model card"
+    )
+
+
+    st.caption(
+        "What the current prototype was "
+        "trained on and how it performs."
+    )
+
+
+    m1, m2, m3, m4 = st.columns(4)
+
+
+    with m1:
+
+        st.markdown(
+
+            metric_card(
+
+                "42,372",
+
+                "Consumers in SGCC dataset"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    with m2:
+
+        st.markdown(
+
+            metric_card(
+
+                "1,035",
+
+                "Days of consumption history"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    with m3:
+
+        st.markdown(
+
+            metric_card(
+
+                "0.764",
+
+                "ROC-AUC",
+
+                "success"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    with m4:
+
+        st.markdown(
+
+            metric_card(
+
+                "0.45",
+
+                "Investigation threshold",
+
+                "warning"
+
+            ),
+
+            unsafe_allow_html=True
+        )
+
+
+    st.write("")
+
+
+    left, right = st.columns(2)
+
+
+    with left:
+
+        st.markdown(
+            """
+            <div class="panel">
+
+            <div class="panel-title">
+                Dataset balance
+            </div>
+
+            <div class="panel-sub">
+                Current SGCC training data.
+            </div>
+
+            <div style="
+            font-family:var(--mono);
+            font-size:14px;
+            line-height:2;
+            ">
+
+                Normal consumers
+                <b>38,757</b>
+
+                <br>
+
+                Theft-labelled consumers
+                <b>3,615</b>
+
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+    with right:
+
+        st.markdown(
+            """
+            <div class="panel">
+
+            <div class="panel-title">
+                Threshold behaviour
+            </div>
+
+            <div class="panel-sub">
+                Operational threshold currently
+                used for investigation priority.
+            </div>
+
+            <div style="
+            font-family:var(--mono);
+            font-size:14px;
+            line-height:2;
+            ">
+
+                Precision
+                <b>0.27</b>
+
+                <br>
+
+                Recall
+                <b>0.47</b>
+
+                <br>
+
+                F1
+                <b>0.34</b>
+
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+    st.markdown(
+        """
+        <div class="panel">
+
+            <div class="panel-title">
+                What makes WattGuard different
+            </div>
+
+            <div class="panel-sub">
+                The model is only one part
+                of the investigation workflow.
+            </div>
+
+            <div style="
+            font-family:var(--mono);
+            font-size:15px;
+            letter-spacing:.3px;
+            line-height:2.2;
+            ">
+
+                DETECT
+
+                &nbsp;→&nbsp;
+
+                EXPLAIN
+
+                &nbsp;→&nbsp;
+
+                QUANTIFY
+
+                &nbsp;→&nbsp;
+
+                PRIORITIZE
+
+                &nbsp;→&nbsp;
+
+                ACT
+
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# =========================================================
+# FOOTER
+# =========================================================
+
+st.markdown(
+    """
+    <div style="
+    margin-top:35px;
+    padding-top:12px;
+    border-top:1px solid var(--border);
+    font-size:11px;
+    color:var(--faint);
+    font-family:var(--mono);
+    ">
+
+    WattGuard AI · PS-AI05 ·
+    AI-assisted investigation system
+
+    <br>
+
+    Prototype trained on SGCC public
+    electricity-theft data.
+    Designed for future validation with
+    anonymised utility smart-meter data.
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
