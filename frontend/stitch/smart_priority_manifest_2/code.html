@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">⚡ WATTGUARD AI</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Grid Overview</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Smart Priority Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Consumer Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Geospatial Hotspots &amp; Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Inspector Field Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance &amp; Active Learning</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">Zone: North Substation 04</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<!-- Top Banner & Quick Metrics -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-space-md py-space-xs rounded-full bg-primary/10 text-primary text-label-md uppercase font-label-md">Live Manifest Active</span>
+<span class="text-body-sm text-on-surface-variant">• 1,420 Consumers Queued</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Smart Priority Manifest</h1>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-space-sm px-space-xl py-space-md bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg transition-colors font-headline-sm" onclick="openWeightModal()">
+<span class="material-symbols-outlined text-[18px]">tune</span>Configure Weights
+      </button>
+<button class="flex items-center gap-space-sm px-space-xl py-space-md bg-secondary text-on-secondary rounded-lg font-headline-sm hover:opacity-90 transition-opacity" onclick="dispatchSelected()">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>Dispatch Teams (<span id="selected-count">0</span>)
+      </button>
+</div>
+</div>
+<!-- Metric Cards Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div class="bg-surface-container p-space-xl rounded-xl">
+<div class="flex justify-between items-start mb-space-md">
+<span class="text-body-sm text-on-surface-variant">Manifest High Risk</span>
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+</div>
+<div class="text-metric-lg font-metric-lg text-on-surface mb-space-xs">384</div>
+<div class="text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% from yesterday
+      </div>
+</div>
+<div class="bg-surface-container p-space-xl rounded-xl">
+<div class="flex justify-between items-start mb-space-md">
+<span class="text-body-sm text-on-surface-variant">Est. Unbilled Loss</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">payments</span>
+</div>
+<div class="text-metric-lg font-metric-lg text-on-surface mb-space-xs">$1.42M</div>
+<div class="text-body-sm text-on-surface-variant">Across active high-priority queue</div>
+</div>
+<div class="bg-surface-container p-space-xl rounded-xl">
+<div class="flex justify-between items-start mb-space-md">
+<span class="text-body-sm text-on-surface-variant">Active Model Weights</span>
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+</div>
+<div class="text-metric-lg font-metric-lg text-on-surface mb-space-xs">v4.8.2</div>
+<div class="text-body-sm text-secondary">Accuracy: 94.8% F1</div>
+</div>
+<div class="bg-surface-container p-space-xl rounded-xl">
+<div class="flex justify-between items-start mb-space-md">
+<span class="text-body-sm text-on-surface-variant">Dispatch Efficiency</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">bolt</span>
+</div>
+<div class="text-metric-lg font-metric-lg text-on-surface mb-space-xs">98.2%</div>
+<div class="text-body-sm text-secondary">Zero false dispatches in 48h</div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md flex-1">
+<!-- Search -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="absolute inset-y-0 left-0 flex items-center pl-space-md pointer-events-none material-symbols-outlined text-on-surface-variant text-[18px]">search</span>
+<input class="w-full bg-surface-container-low text-on-surface pl-10 pr-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-body-md" id="consumer-search" oninput="filterTable()" placeholder="Search Consumer ID, Name, Meter..." type="text"/>
+</div>
+<!-- Risk Category Filter -->
+<select class="bg-surface-container-low text-on-surface px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-body-md" id="filter-risk" onchange="filterTable()">
+<option value="">All Risk Categories</option>
+<option value="critical">Critical Risk</option>
+<option value="high">High Risk</option>
+<option value="medium">Medium Risk</option>
+<option value="low">Low Risk</option>
+</select>
+<!-- Tariff Slab Filter -->
+<select class="bg-surface-container-low text-on-surface px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-body-md" id="filter-tariff" onchange="filterTable()">
+<option value="">All Tariff Slabs</option>
+<option value="HT-Industrial">HT-Industrial</option>
+<option value="LT-Commercial">LT-Commercial</option>
+<option value="Residential">Residential</option>
+</select>
+<!-- Feeder ID Filter -->
+<select class="bg-surface-container-low text-on-surface px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary text-body-md" id="filter-feeder" onchange="filterTable()">
+<option value="">All Feeders</option>
+<option value="FDR-NORTH-04">FDR-NORTH-04</option>
+<option value="FDR-EAST-12">FDR-EAST-12</option>
+<option value="FDR-WEST-01">FDR-WEST-01</option>
+</select>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="text-on-surface-variant hover:text-on-surface text-body-sm font-label-md uppercase" onclick="resetFilters()">Reset Filters</button>
+<span class="text-body-sm text-on-surface-variant">Showing <strong class="text-on-surface" id="visible-count">5</strong> of 1,420</span>
+</div>
+</div>
+<!-- Prioritized Inspection Queue Table -->
+<div class="bg-surface-container rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="manifest-table">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant text-label-md uppercase font-label-md">
+<th class="p-space-lg w-12 text-center">
+<input class="rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" id="select-all" onclick="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="p-space-lg">Rank</th>
+<th class="p-space-lg">Consumer ID</th>
+<th class="p-space-lg">Tariff &amp; Load</th>
+<th class="p-space-lg">Composite Priority Score</th>
+<th class="p-space-lg">Dual Model Scores</th>
+<th class="p-space-lg">Unbilled Loss</th>
+<th class="p-space-lg">Recommended Action</th>
+<th class="p-space-lg">Safety Alert</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high/50 transition-colors" data-feeder="FDR-NORTH-04" data-risk="critical" data-search="c-88204 alpha steel" data-tariff="HT-Industrial">
+<td class="p-space-lg text-center">
+<input class="row-checkbox rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" onclick="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-space-lg font-metric-md text-primary">#01</td>
+<td class="p-space-lg">
+<a class="text-primary hover:underline font-metric-sm flex items-center gap-space-xs" href="#" onclick="navigateToDiagnostic('C-88204')">
+                C-88204 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<span class="text-body-sm text-on-surface-variant block">Alpha Steel Mill Ltd</span>
+</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant text-label-sm font-label-md uppercase">HT-Industrial</span>
+<span class="block text-body-sm text-on-surface-variant mt-1">1.2 MW Peak</span>
+</td>
+<td class="p-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-md text-error">98.4</span>
+<div class="w-16 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full" style="width: 98.4%"></div>
+</div>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary" title="XGBoost Anomaly Model">XGB: 0.96</span>
+<span class="text-secondary" title="Graph Neural Network">GNN: 0.99</span>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm text-tertiary">$48,200</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-error/10 text-error border border-error/30 text-label-sm font-label-md uppercase">Immediate Field Audit</span>
+</td>
+<td class="p-space-lg">
+<span class="flex items-center gap-space-xs text-error font-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">bolt</span> Bypass Risk
+              </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high/50 transition-colors" data-feeder="FDR-EAST-12" data-risk="high" data-search="c-72019 metro cold storage" data-tariff="LT-Commercial">
+<td class="p-space-lg text-center">
+<input class="row-checkbox rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" onclick="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-space-lg font-metric-md text-on-surface">#02</td>
+<td class="p-space-lg">
+<a class="text-primary hover:underline font-metric-sm flex items-center gap-space-xs" href="#" onclick="navigateToDiagnostic('C-72019')">
+                C-72019 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<span class="text-body-sm text-on-surface-variant block">Metro Cold Storage</span>
+</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant text-label-sm font-label-md uppercase">LT-Commercial</span>
+<span class="block text-body-sm text-on-surface-variant mt-1">450 kW Peak</span>
+</td>
+<td class="p-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-md text-tertiary">91.2</span>
+<div class="w-16 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 91.2%"></div>
+</div>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary" title="XGBoost Anomaly Model">XGB: 0.89</span>
+<span class="text-secondary" title="Graph Neural Network">GNN: 0.92</span>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm text-tertiary">$19,500</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-tertiary/10 text-tertiary border border-tertiary/30 text-label-sm font-label-md uppercase">Smart Meter Calibration</span>
+</td>
+<td class="p-space-lg">
+<span class="flex items-center gap-space-xs text-on-surface-variant font-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Nominal
+              </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high/50 transition-colors" data-feeder="FDR-NORTH-04" data-risk="high" data-search="c-55410 apex chemicals" data-tariff="HT-Industrial">
+<td class="p-space-lg text-center">
+<input class="row-checkbox rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" onclick="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-space-lg font-metric-md text-on-surface">#03</td>
+<td class="p-space-lg">
+<a class="text-primary hover:underline font-metric-sm flex items-center gap-space-xs" href="#" onclick="navigateToDiagnostic('C-55410')">
+                C-55410 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<span class="text-body-sm text-on-surface-variant block">Apex Chemicals</span>
+</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant text-label-sm font-label-md uppercase">HT-Industrial</span>
+<span class="block text-body-sm text-on-surface-variant mt-1">2.1 MW Peak</span>
+</td>
+<td class="p-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-md text-tertiary">88.9</span>
+<div class="w-16 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 88.9%"></div>
+</div>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary" title="XGBoost Anomaly Model">XGB: 0.85</span>
+<span class="text-secondary" title="Graph Neural Network">GNN: 0.90</span>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm text-tertiary">$31,000</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-tertiary/10 text-tertiary border border-tertiary/30 text-label-sm font-label-md uppercase">Remote Telemetry Check</span>
+</td>
+<td class="p-space-lg">
+<span class="flex items-center gap-space-xs text-error font-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">thermostat</span> Thermal High
+              </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-high/50 transition-colors" data-feeder="FDR-WEST-01" data-risk="medium" data-search="c-11029 sunset heights apartment" data-tariff="Residential">
+<td class="p-space-lg text-center">
+<input class="row-checkbox rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" onclick="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-space-lg font-metric-md text-on-surface">#04</td>
+<td class="p-space-lg">
+<a class="text-primary hover:underline font-metric-sm flex items-center gap-space-xs" href="#" onclick="navigateToDiagnostic('C-11029')">
+                C-11029 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<span class="text-body-sm text-on-surface-variant block">Sunset Heights Apt 4B</span>
+</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant text-label-sm font-label-md uppercase">Residential</span>
+<span class="block text-body-sm text-on-surface-variant mt-1">12 kW Peak</span>
+</td>
+<td class="p-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-md text-secondary">74.5</span>
+<div class="w-16 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 74.5%"></div>
+</div>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary" title="XGBoost Anomaly Model">XGB: 0.72</span>
+<span class="text-secondary" title="Graph Neural Network">GNN: 0.75</span>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm text-tertiary">$1,200</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-secondary/10 text-secondary border border-secondary/30 text-label-sm font-label-md uppercase">Routine Inspection</span>
+</td>
+<td class="p-space-lg">
+<span class="flex items-center gap-space-xs text-on-surface-variant font-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Nominal
+              </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-high/50 transition-colors" data-feeder="FDR-EAST-12" data-risk="low" data-search="c-99421 harbor view retail" data-tariff="LT-Commercial">
+<td class="p-space-lg text-center">
+<input class="row-checkbox rounded bg-surface-container-low border-outline-variant text-primary focus:ring-0 w-4 h-4 cursor-pointer" onclick="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-space-lg font-metric-md text-on-surface">#05</td>
+<td class="p-space-lg">
+<a class="text-primary hover:underline font-metric-sm flex items-center gap-space-xs" href="#" onclick="navigateToDiagnostic('C-99421')">
+                C-99421 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<span class="text-body-sm text-on-surface-variant block">Harbor View Retail</span>
+</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant text-label-sm font-label-md uppercase">LT-Commercial</span>
+<span class="block text-body-sm text-on-surface-variant mt-1">85 kW Peak</span>
+</td>
+<td class="p-space-lg">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-md text-secondary">42.1</span>
+<div class="w-16 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 42.1%"></div>
+</div>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-primary" title="XGBoost Anomaly Model">XGB: 0.40</span>
+<span class="text-secondary" title="Graph Neural Network">GNN: 0.44</span>
+</div>
+</td>
+<td class="p-space-lg font-metric-sm text-tertiary">$450</td>
+<td class="p-space-lg">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-low text-on-surface-variant border border-outline-variant text-label-sm font-label-md uppercase">Monitor Only</span>
+</td>
+<td class="p-space-lg">
+<span class="flex items-center gap-space-xs text-on-surface-variant font-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Nominal
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination -->
+<div class="p-space-lg bg-surface-container-high flex items-center justify-between">
+<span class="text-body-sm text-on-surface-variant">API Endpoint: GET /prioritization/manifest?zone=north_04</span>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-sm bg-surface-container rounded text-on-surface-variant hover:text-on-surface text-body-sm disabled:opacity-50">Prev</button>
+<button class="px-space-md py-space-sm bg-primary text-on-primary rounded text-body-sm font-semibold">1</button>
+<button class="px-space-md py-space-sm bg-surface-container rounded text-on-surface-variant hover:text-on-surface text-body-sm">2</button>
+<button class="px-space-md py-space-sm bg-surface-container rounded text-on-surface-variant hover:text-on-surface text-body-sm">3</button>
+<button class="px-space-md py-space-sm bg-surface-container rounded text-on-surface-variant hover:text-on-surface text-body-sm">Next</button>
+</div>
+</div>
+</div>
+<!-- Dynamic Weight Configuration Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-md hidden" id="weight-modal">
+<div class="bg-surface-container border border-outline-variant/30 w-full max-w-xl rounded-2xl p-space-xl shadow-2xl relative">
+<div class="flex items-center justify-between mb-space-xl">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary text-metric-md">tune</span>
+<div>
+<h2 class="text-headline-md text-on-surface">Dynamic Weight Configuration</h2>
+<p class="text-body-sm text-on-surface-variant">Adjust composite priority score formula weights</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface material-symbols-outlined" onclick="closeWeightModal()">close</button>
+</div>
+<div class="space-y-space-xl mb-space-xl">
+<!-- Slider 1 -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="text-body-md font-semibold text-on-surface">w1: Risk Category Weight</label>
+<span class="font-metric-sm text-primary" id="w1-val">0.35</span>
+</div>
+<input class="w-full accent-primary bg-surface-container-low rounded-lg h-2 cursor-pointer" max="1" min="0" oninput="updateWeightVal('w1', this.value)" step="0.05" type="range" value="0.35"/>
+<span class="text-body-sm text-on-surface-variant">Governs the multiplier for structural hazard and anomaly indicators.</span>
+</div>
+<!-- Slider 2 -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="text-body-md font-semibold text-on-surface">w2: Anomaly Score Weight</label>
+<span class="font-metric-sm text-primary" id="w2-val">0.25</span>
+</div>
+<input class="w-full accent-primary bg-surface-container-low rounded-lg h-2 cursor-pointer" max="1" min="0" oninput="updateWeightVal('w2', this.value)" step="0.05" type="range" value="0.25"/>
+<span class="text-body-sm text-on-surface-variant">Weighs output certainty from dual XGBoost and GNN anomaly models.</span>
+</div>
+<!-- Slider 3 -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="text-body-md font-semibold text-on-surface">w3: Financial Loss Weight</label>
+<span class="font-metric-sm text-primary" id="w3-val">0.25</span>
+</div>
+<input class="w-full accent-primary bg-surface-container-low rounded-lg h-2 cursor-pointer" max="1" min="0" oninput="updateWeightVal('w3', this.value)" step="0.05" type="range" value="0.25"/>
+<span class="text-body-sm text-on-surface-variant">Prioritizes high-tariff industrial and commercial unbilled revenue exposure.</span>
+</div>
+<!-- Slider 4 -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="text-body-md font-semibold text-on-surface">w4: Confidence &amp; Verification Weight</label>
+<span class="font-metric-sm text-primary" id="w4-val">0.15</span>
+</div>
+<input class="w-full accent-primary bg-surface-container-low rounded-lg h-2 cursor-pointer" max="1" min="0" oninput="updateWeightVal('w4', this.value)" step="0.05" type="range" value="0.15"/>
+<span class="text-body-sm text-on-surface-variant">Adjusts for historical accuracy and recent meter calibration stamps.</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl mb-space-xl flex items-center justify-between">
+<span class="text-body-sm text-on-surface-variant">Formula Sum Check</span>
+<span class="font-metric-sm text-secondary" id="weight-sum">1.00 (Valid)</span>
+</div>
+<div class="flex items-center justify-end gap-space-md">
+<button class="px-space-xl py-space-md bg-surface-container-high text-on-surface rounded-lg hover:bg-surface-container-highest transition-colors font-headline-sm" onclick="closeWeightModal()">Cancel</button>
+<button class="px-space-xl py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:opacity-90 transition-opacity flex items-center gap-space-sm" onclick="submitPriorityModel()">
+<span class="material-symbols-outlined text-[18px]">bolt</span> Update Priority Model
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 bg-surface-container-high border border-primary/30 text-on-surface px-space-xl py-space-lg rounded-xl shadow-2xl flex items-center gap-space-md transform translate-y-24 opacity-0 transition-all duration-300 z-50" id="toast">
+<span class="material-symbols-outlined text-secondary text-[24px]">check_circle</span>
+<div>
+<h4 class="font-headline-sm text-on-surface" id="toast-title">Manifest Updated</h4>
+<p class="text-body-sm text-on-surface-variant" id="toast-desc">New priority weights applied successfully via POST /model/weights.</p>
+</div>
+</div>
+</div>
+<script>
+  function openWeightModal() {
+    document.getElementById('weight-modal').classList.remove('hidden');
+  }
+
+  function closeWeightModal() {
+    document.getElementById('weight-modal').classList.add('hidden');
+  }
+
+  function updateWeightVal(id, val) {
+    document.getElementById(id + '-val').innerText = parseFloat(val).toFixed(2);
+    // Simple sum calculation feedback
+    const w1 = parseFloat(document.querySelector('input[oninput*="w1"]').value);
+    const w2 = parseFloat(document.querySelector('input[oninput*="w2"]').value);
+    const w3 = parseFloat(document.querySelector('input[oninput*="w3"]').value);
+    const w4 = parseFloat(document.querySelector('input[oninput*="w4"]').value);
+    const sum = (w1 + w2 + w3 + w4).toFixed(2);
+    const sumEl = document.getElementById('weight-sum');
+    sumEl.innerText = sum + (sum == 1.0 ? ' (Valid)' : ' (Warning: Should equal 1.0)');
+    sumEl.className = sum == 1.0 ? 'font-metric-sm text-secondary' : 'font-metric-sm text-error';
+  }
+
+  function submitPriorityModel() {
+    closeWeightModal();
+    showToast('Priority Model Recomputed', 'Active weights successfully deployed to inference pipeline.');
+  }
+
+  function dispatchSelected() {
+    const checkedCount = document.querySelectorAll('.row-checkbox:checked').length;
+    if (checkedCount === 0) {
+      showToast('Dispatch Error', 'Please select at least one consumer from the manifest queue.');
+      return;
+    }
+    showToast('Inspection Teams Dispatched', `Successfully routed ${checkedCount} work orders to field mobile portal.`);
+  }
+
+  function toggleSelectAll(master) {
+    const checkboxes = document.querySelectorAll('.row-checkbox');
+    checkboxes.forEach(cb => cb.checked = master.checked);
+    updateSelectedCount();
+  }
+
+  function updateSelectedCount() {
+    const checkedCount = document.querySelectorAll('.row-checkbox:checked').length;
+    document.getElementById('selected-count').innerText = checkedCount;
+  }
+
+  function filterTable() {
+    const search = document.getElementById('consumer-search').value.toLowerCase();
+    const risk = document.getElementById('filter-risk').value;
+    const tariff = document.getElementById('filter-tariff').value;
+    const feeder = document.getElementById('filter-feeder').value;
+
+    const rows = document.querySelectorAll('#manifest-table tbody tr');
+    let visible = 0;
+
+    rows.forEach(row => {
+      const rRisk = row.getAttribute('data-risk');
+      const rTariff = row.getAttribute('data-tariff');
+      const rFeeder = row.getAttribute('data-feeder');
+      const rSearch = row.getAttribute('data-search');
+
+      const matchSearch = !search || rSearch.includes(search);
+      const matchRisk = !risk || rRisk === risk;
+      const matchTariff = !tariff || rTariff === tariff;
+      const matchFeeder = !feeder || rFeeder === feeder;
+
+      if (matchSearch && matchRisk && matchTariff && matchFeeder) {
+        row.style.display = '';
+        visible++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    document.getElementById('visible-count').innerText = visible;
+  }
+
+  function resetFilters() {
+    document.getElementById('consumer-search').value = '';
+    document.getElementById('filter-risk').value = '';
+    document.getElementById('filter-tariff').value = '';
+    document.getElementById('filter-feeder').value = '';
+    filterTable();
+  }
+
+  function navigateToDiagnostic(consumerId) {
+    // Simulates SPA routing to Consumer Diagnostic Studio
+    showToast('Navigating Studio', `Loading deep diagnostic telemetry for ${consumerId}...`);
+  }
+
+  function showToast(title, desc) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-title').innerText = title;
+    document.getElementById('toast-desc').innerText = desc;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 4000);
+  }
+</script></main></div></body></html>

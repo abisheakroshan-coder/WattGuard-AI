@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#0a0e18", "surface-dim": "#0f131d", "primary-container": "#4d8eff", "on-secondary-container": "#00311f", "background": "#0f131d", "primary": "#adc6ff", "on-surface-variant": "#c2c6d6", "outline": "#8c909f", "surface-container-high": "#262a35", "secondary-container": "#00a572", "secondary-fixed": "#6ffbbe", "on-secondary": "#003824", "surface-container-highest": "#313540", "surface-tint": "#adc6ff", "on-tertiary-container": "#3e2400", "surface-bright": "#353944", "secondary": "#4edea3", "on-background": "#dfe2f1", "on-primary-fixed": "#001a42", "on-tertiary-fixed": "#2a1700", "inverse-primary": "#005ac2", "outline-variant": "#424754", "primary-fixed-dim": "#adc6ff", "on-primary-container": "#00285d", "inverse-on-surface": "#2c303b", "on-surface": "#dfe2f1", "tertiary-fixed-dim": "#ffb95f", "error": "#ffb4ab", "surface-container-low": "#171b26", "on-error": "#690005", "surface-container": "#1c1f2a", "secondary-fixed-dim": "#4edea3", "error-container": "#93000a", "on-primary-fixed-variant": "#004395", "tertiary-fixed": "#ffddb8", "on-primary": "#002e6a", "tertiary-container": "#ca8100", "on-secondary-fixed-variant": "#005236", "on-secondary-fixed": "#002113", "on-tertiary": "#472a00", "surface-variant": "#313540", "inverse-surface": "#dfe2f1", "surface": "#0f131d", "on-error-container": "#ffdad6", "primary-fixed": "#d8e2ff", "tertiary": "#ffb95f"},"borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},"spacing": {"gutter": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "space-lg": "1rem", "space-sm": "0.25rem", "space-xs": "0.125rem", "space-md": "0.5rem"},"fontFamily": {"metric-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "metric-md": ["JetBrains Mono"], "body-md": ["Inter"], "label-sm": ["JetBrains Mono"]},"fontSize": {"metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}]}}}};</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-8 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">bolt</span></div><div class="flex flex-col"><span class="font-headline-sm text-on-surface tracking-wider uppercase">WATTGUARD</span><span class="font-label-sm text-primary">AI ENTERPRISE</span></div></div><nav class="flex-1 px-4 space-y-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a aria-current="page" class="flex items-center px-4 py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">grid_view</span>Executive Grid</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">priority_high</span>Priority Manifest</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">monitoring</span>Diagnostic Studio</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="geospatial-hotspots-and-fleet-navigator" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">map</span>Geospatial Fleet</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">engineering</span>Field Portal</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="model-governance-and-active-learning" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">psychology</span>Model Governance</a></nav><div class="px-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div><span class="font-label-sm text-on-surface-variant">SYSTEM NOMINAL</span></div><span class="font-metric-sm text-on-surface-variant">v4.8</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-6"><div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-secondary text-[18px]">shield</span><span class="font-metric-sm text-on-surface">GRID SECURE</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[16px]">schedule</span><span>UTC 14:22:08</span></div></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen p-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Ingestion and Health Status Bar -->
+<div class="w-full bg-surface-container rounded-xl p-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">pulse_alert</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-on-surface">SCADA Telemetry Stream</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-secondary/20 text-secondary border border-secondary/30">ONLINE</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-0.5">Ingesting live feeds across Eastern Interconnection nodes. Latency: <span class="font-metric-sm text-primary">14ms</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<div class="hidden lg:flex flex-col text-right pr-4">
+<span class="font-label-sm text-on-surface-variant">BUFFER CAPACITY</span>
+<span class="font-metric-sm text-on-surface">94.8% OPTIMAL</span>
+</div>
+<button class="flex-1 md:flex-none px-5 py-2.5 rounded-xl bg-primary text-on-primary font-headline-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-sm" onclick="openIngestModal()">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Ingest Local Dataset</span>
+</button>
+</div>
+</div>
+<!-- 4 Key Metrics KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-on-surface-variant tracking-wider">TOTAL ACTIVE METERS</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">electric_meter</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-on-surface">1,428,912</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-secondary font-metric-sm flex items-center"><span class="material-symbols-outlined text-[14px]">trending_up</span>+0.8%</span>
+<span class="font-body-sm text-on-surface-variant">vs last telemetry cycle</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-error/5 rounded-full blur-2xl group-hover:bg-error/10 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-on-surface-variant tracking-wider">FLAGGED THEFTS &amp; ANOMALIES</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">gpp_bad</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-error">3,421</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-error font-metric-sm flex items-center"><span class="material-symbols-outlined text-[14px]">trending_up</span>+12.4%</span>
+<span class="font-body-sm text-on-surface-variant">require field inspection</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-full blur-2xl group-hover:bg-tertiary/10 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-on-surface-variant tracking-wider">EST. UNBILLED ENERGY LOSS</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-tertiary">1.48 <span class="text-headline-md">GWh</span></div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-tertiary font-metric-sm flex items-center"><span class="material-symbols-outlined text-[14px]">warning</span>Critical limit</span>
+<span class="font-body-sm text-on-surface-variant">past 30 days</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-on-surface-variant tracking-wider">REVENUE AT RISK</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-on-surface">$4.23M</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-secondary font-metric-sm flex items-center"><span class="material-symbols-outlined text-[14px]">trending_down</span>-2.1%</span>
+<span class="font-body-sm text-on-surface-variant">recovery rate optimized</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Analytics Split View -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left 2 Cols: Vulnerable Feeder Ranking Table -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl p-space-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline-md text-on-surface">Vulnerable Feeder Ranking</h2>
+<p class="font-body-sm text-on-surface-variant">Real-time endpoint diagnostic via <span class="font-metric-sm text-primary">GET /geospatial/feeder-vulnerability</span></p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md hover:bg-surface-container-highest transition-colors">Filter Severity</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md hover:bg-surface-container-highest transition-colors">Export CSV</button>
+</div>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container-high text-on-surface-variant font-label-md">
+<th class="py-3 px-4 font-medium">FEEDER ID</th>
+<th class="py-3 px-4 font-medium">SUBSTATION PHASE</th>
+<th class="py-3 px-4 font-medium">PHASE IMBALANCE %</th>
+<th class="py-3 px-4 font-medium">UNACCOUNTED RESIDUAL</th>
+<th class="py-3 px-4 font-medium text-right">RISK SCORE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40 font-body-md text-on-surface">
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-3.5 px-4 font-metric-sm text-primary">FD-NORTH-882</td>
+<td class="py-3.5 px-4">Substation Alpha (Ph-A)</td>
+<td class="py-3.5 px-4"><span class="font-metric-sm text-error">18.4%</span></td>
+<td class="py-3.5 px-4 font-metric-sm">42,150 kWh</td>
+<td class="py-3.5 px-4 text-right"><span class="px-2 py-1 rounded bg-error/10 text-error font-metric-sm border border-error/30">98.2 CRITICAL</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-3.5 px-4 font-metric-sm text-primary">FD-WEST-409</td>
+<td class="py-3.5 px-4">Substation Beta (Ph-C)</td>
+<td class="py-3.5 px-4"><span class="font-metric-sm text-error">14.1%</span></td>
+<td class="py-3.5 px-4 font-metric-sm">38,900 kWh</td>
+<td class="py-3.5 px-4 text-right"><span class="px-2 py-1 rounded bg-error/10 text-error font-metric-sm border border-error/30">91.5 CRITICAL</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-3.5 px-4 font-metric-sm text-primary">FD-CENTRAL-112</td>
+<td class="py-3.5 px-4">Substation Gamma (Ph-B)</td>
+<td class="py-3.5 px-4"><span class="font-metric-sm text-tertiary">9.8%</span></td>
+<td class="py-3.5 px-4 font-metric-sm">24,620 kWh</td>
+<td class="py-3.5 px-4 text-right"><span class="px-2 py-1 rounded bg-tertiary/10 text-tertiary font-metric-sm border border-tertiary/30">78.4 HIGH</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-3.5 px-4 font-metric-sm text-primary">FD-EAST-993</td>
+<td class="py-3.5 px-4">Substation Delta (Ph-A)</td>
+<td class="py-3.5 px-4"><span class="font-metric-sm text-secondary">4.2%</span></td>
+<td class="py-3.5 px-4 font-metric-sm">11,040 kWh</td>
+<td class="py-3.5 px-4 text-right"><span class="px-2 py-1 rounded bg-secondary/10 text-secondary font-metric-sm border border-secondary/30">45.0 MODERATE</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="py-3.5 px-4 font-metric-sm text-primary">FD-SOUTH-210</td>
+<td class="py-3.5 px-4">Substation Epsilon (Ph-B)</td>
+<td class="py-3.5 px-4"><span class="font-metric-sm text-secondary">2.1%</span></td>
+<td class="py-3.5 px-4 font-metric-sm">4,890 kWh</td>
+<td class="py-3.5 px-4 text-right"><span class="px-2 py-1 rounded bg-secondary/10 text-secondary font-metric-sm border border-secondary/30">18.9 LOW</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-high flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Showing top 5 high-risk anomalies out of 142 total feeders</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors">Prev</button>
+<span class="font-metric-sm text-on-surface">1 / 29</span>
+<button class="px-3 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Right 1 Col: AI Neural Diagnostics & Map Mini-preview -->
+<div class="flex flex-col gap-6">
+<!-- AI Diagnostic Feed Card -->
+<div class="bg-surface-container rounded-xl p-space-xl shadow-sm flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+              AI Ensemble Inference
+            </span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-4">Active transformer core anomaly detection model v4.8 executing real-time signature matching.</p>
+<div class="space-y-3">
+<div class="p-3 rounded-lg bg-surface-container-high/60 border border-error/20">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-error">BYPASS DETECTED</span>
+<span class="font-metric-sm text-on-surface-variant">14:19:02 UTC</span>
+</div>
+<p class="font-body-sm text-on-surface">Meter #9021-TX bridged manually at terminal box. Dispatched alert to Field Ops.</p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 border border-tertiary/20">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-tertiary">VOLTAGE SAG PATTERN</span>
+<span class="font-metric-sm text-on-surface-variant">14:15:44 UTC</span>
+</div>
+<p class="font-body-sm text-on-surface">Substation Alpha phase imbalance correlated with high inductive load.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-headline-sm hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Open Diagnostic Studio</span>
+</button>
+</div>
+<!-- Geospatial Quick View -->
+<div class="bg-surface-container rounded-xl p-space-xl shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<span class="font-headline-sm text-on-surface">Hotspot Cluster Map</span>
+<span class="font-label-sm text-primary">REGION 4</span>
+</div>
+<div class="w-full h-36 rounded-lg bg-cover bg-center relative overflow-hidden" data-location="Eastern Interconnection Grid Sector 4" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')">
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-[2px] flex items-center justify-center">
+<div class="px-3 py-1.5 rounded-lg bg-surface/90 text-on-surface font-metric-sm flex items-center gap-2 shadow-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span>12 Active Hotspots Mapped</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ingestion Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-surface/80 backdrop-blur-md hidden items-center justify-center p-4" id="ingestModal">
+<div class="bg-surface-container border border-surface-container-high rounded-xl max-w-lg w-full p-6 shadow-2xl">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+          Ingest Local Dataset
+        </h3>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeIngestModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">Upload smart meter telemetry CSV, JSON manifest, or SCADA dump for immediate anomaly inference and feeder risk indexing.</p>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 text-center mb-6 hover:border-primary transition-colors cursor-pointer bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[48px] mb-2">cloud_upload</span>
+<p class="font-headline-sm text-on-surface">Drag and drop dataset files here</p>
+<p class="font-body-sm text-on-surface-variant mt-1">Supports .csv, .json, .parquet up to 500MB</p>
+</div>
+<div class="flex items-center justify-end gap-3">
+<button class="px-4 py-2 rounded-xl bg-surface-container-high text-on-surface font-headline-sm hover:bg-surface-container-highest transition-colors" onclick="closeIngestModal()">Cancel</button>
+<button class="px-5 py-2 rounded-xl bg-primary text-on-primary font-headline-sm hover:brightness-110 transition-all" onclick="simulateIngest()">Start Ingestion</button>
+</div>
+</div>
+</div>
+<script>
+    function openIngestModal() {
+      const modal = document.getElementById('ingestModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    
+    function closeIngestModal() {
+      const modal = document.getElementById('ingestModal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    function simulateIngest() {
+      alert('Dataset ingestion initiated successfully. SCADA inference pipeline processing nodes...');
+      closeIngestModal();
+    }
+  </script>
+</div></main></div></body></html>

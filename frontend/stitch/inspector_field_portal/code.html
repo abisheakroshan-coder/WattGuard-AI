@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#0a0e18", "surface-dim": "#0f131d", "primary-container": "#4d8eff", "on-secondary-container": "#00311f", "background": "#0f131d", "primary": "#adc6ff", "on-surface-variant": "#c2c6d6", "outline": "#8c909f", "surface-container-high": "#262a35", "secondary-container": "#00a572", "secondary-fixed": "#6ffbbe", "on-secondary": "#003824", "surface-container-highest": "#313540", "surface-tint": "#adc6ff", "on-tertiary-container": "#3e2400", "surface-bright": "#353944", "secondary": "#4edea3", "on-background": "#dfe2f1", "on-primary-fixed": "#001a42", "on-tertiary-fixed": "#2a1700", "inverse-primary": "#005ac2", "outline-variant": "#424754", "primary-fixed-dim": "#adc6ff", "on-primary-container": "#00285d", "inverse-on-surface": "#2c303b", "on-surface": "#dfe2f1", "tertiary-fixed-dim": "#ffb95f", "error": "#ffb4ab", "surface-container-low": "#171b26", "on-error": "#690005", "surface-container": "#1c1f2a", "secondary-fixed-dim": "#4edea3", "error-container": "#93000a", "on-primary-fixed-variant": "#004395", "tertiary-fixed": "#ffddb8", "on-primary": "#002e6a", "tertiary-container": "#ca8100", "on-secondary-fixed-variant": "#005236", "on-secondary-fixed": "#002113", "on-tertiary": "#472a00", "surface-variant": "#313540", "inverse-surface": "#dfe2f1", "surface": "#0f131d", "on-error-container": "#ffdad6", "primary-fixed": "#d8e2ff", "tertiary": "#ffb95f"},"borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},"spacing": {"gutter": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "space-lg": "1rem", "space-sm": "0.25rem", "space-xs": "0.125rem", "space-md": "0.5rem"},"fontFamily": {"metric-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "metric-md": ["JetBrains Mono"], "body-md": ["Inter"], "label-sm": ["JetBrains Mono"]},"fontSize": {"metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}]}}}};</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-8 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">bolt</span></div><div class="flex flex-col"><span class="font-headline-sm text-on-surface tracking-wider uppercase">WATTGUARD</span><span class="font-label-sm text-primary">AI ENTERPRISE</span></div></div><nav class="flex-1 px-4 space-y-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">grid_view</span>Executive Grid</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">priority_high</span>Priority Manifest</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">monitoring</span>Diagnostic Studio</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="geospatial-hotspots-and-fleet-navigator" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">map</span>Geospatial Fleet</a><a aria-current="page" class="flex items-center px-4 py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">engineering</span>Field Portal</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="model-governance-and-active-learning" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">psychology</span>Model Governance</a></nav><div class="px-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div><span class="font-label-sm text-on-surface-variant">SYSTEM NOMINAL</span></div><span class="font-metric-sm text-on-surface-variant">v4.8</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-6"><div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-secondary text-[18px]">shield</span><span class="font-metric-sm text-on-surface">GRID SECURE</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[16px]">schedule</span><span>UTC 14:22:08</span></div></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen p-space-xl"><div class="flex flex-col w-full pb-16">
+<!-- Top Banner / Breadcrumb -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 bg-surface-container-low p-6 rounded-xl">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">engineering</span>
+<span class="font-label-md text-primary tracking-widest uppercase">FIELD_AUDIT_PORTAL // SECURE_NODE_99</span>
+</div>
+<h1 class="font-headline-lg text-on-surface">Inspector Portal &amp; Evidence Terminal</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-secondary text-[18px]">gps_fixed</span>
+<span class="font-metric-sm text-on-surface">GPS: 37.7749° N, 122.4194° W</span>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-xl font-headline-sm hover:opacity-90 transition-all cursor-pointer shadow-sm" onclick="triggerDossierModal()">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+        Generate Dossier
+      </button>
+</div>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Verification Lookup & Recent Audits (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Lookup Card -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-on-surface">Inspection Verification Lookup</span>
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Enter Consumer ID or Meter Serial to retrieve historical telemetry and grid baseline.</p>
+<div class="flex flex-col gap-3">
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">CONSUMER ID / METER SERIAL</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low px-4 py-2.5 rounded-xl font-metric-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="lookupInput" placeholder="e.g. MTR-88392-AX" type="text"/>
+<button class="bg-surface-container-high hover:bg-surface-bright px-4 py-2.5 rounded-xl text-on-surface transition-all flex items-center justify-center cursor-pointer" onclick="performLookup()">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lookup Result Preview -->
+<div class="hidden flex flex-col gap-3 p-4 bg-surface-container-low rounded-xl mt-2 border-l-2 border-secondary animate-fade-in" id="lookupResult">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-metric-sm text-secondary">MATCH FOUND: #MTR-88392-AX</span>
+<h4 class="font-headline-sm text-on-surface mt-0.5">Industrial Sector 7 - Substation B</h4>
+</div>
+<span class="px-2 py-0.5 bg-error/10 text-error rounded font-metric-sm text-xs">HIGH RISK</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-surface-container">
+<div>
+<span class="font-label-sm text-on-surface-variant">EXPECTED LOAD</span>
+<p class="font-metric-sm text-on-surface">142.5 kW</p>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant">LAST AUDITED</span>
+<p class="font-metric-sm text-on-surface">14 days ago</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Status Queue -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-4">
+<span class="font-headline-sm text-on-surface">Assigned Queue (Today)</span>
+<div class="flex flex-col gap-2">
+<div class="p-3 bg-surface-container-low hover:bg-surface-container-high rounded-xl cursor-pointer transition-all flex items-center justify-between" onclick="selectQueueItem('MTR-88392-AX', 'Industrial Sector 7')">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<div>
+<span class="font-metric-sm text-on-surface block">MTR-88392-AX</span>
+<span class="font-body-sm text-on-surface-variant">Industrial Sector 7</span>
+</div>
+</div>
+<span class="font-label-sm text-primary uppercase">Pending</span>
+</div>
+<div class="p-3 bg-surface-container-low hover:bg-surface-container-high rounded-xl cursor-pointer transition-all flex items-center justify-between" onclick="selectQueueItem('MTR-44102-BC', 'Commercial Plaza North')">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div>
+<span class="font-metric-sm text-on-surface block">MTR-44102-BC</span>
+<span class="font-body-sm text-on-surface-variant">Commercial Plaza North</span>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant uppercase">Scheduled</span>
+</div>
+<div class="p-3 bg-surface-container-low hover:bg-surface-container-high rounded-xl cursor-pointer transition-all flex items-center justify-between" onclick="selectQueueItem('MTR-99321-ZX', 'Residential Node 12')">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div>
+<span class="font-metric-sm text-on-surface block">MTR-99321-ZX</span>
+<span class="font-body-sm text-on-surface-variant">Residential Node 12</span>
+</div>
+</div>
+<span class="font-label-sm text-on-surface-variant uppercase">Scheduled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Column: Structured Findings Submission Form (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-surface-container-high pb-4">
+<div>
+<span class="font-headline-sm text-on-surface block">Structured Findings Submission</span>
+<span class="font-body-sm text-on-surface-variant">Record telemetry observations, hardware integrity, and tamper evidence.</span>
+</div>
+<div class="hidden px-3 py-1 bg-primary/10 text-primary rounded-xl font-metric-sm text-xs" id="activeTargetBadge">
+            Active: MTR-88392-AX
+          </div>
+</div>
+<form class="flex flex-col gap-5" id="findingsForm" onsubmit="submitFindings(event)">
+<!-- Row 1: Outcome & Observed Meter Reading -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">OUTCOME STATUS *</label>
+<select class="w-full bg-surface-container-low px-4 py-3 rounded-xl font-metric-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" required="">
+<option disabled="" selected="" value="">Select Inspection Outcome...</option>
+<option value="tamper_confirmed">Tamper Confirmed / Bypass Detected</option>
+<option value="meter_malfunction">Meter Malfunction / Hardware Fault</option>
+<option value="nominal">Nominal Operation / Verified Clear</option>
+<option value="denied_access">Site Access Denied</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">OBSERVED METER READING (kWh) *</label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-xl font-metric-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. 48291.50" required="" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Row 2: Line Current & Seal Barcode -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">LINE CURRENT (Amps) *</label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-xl font-metric-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="e.g. 124.8" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">SEAL BARCODE / RFID *</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low px-4 py-3 rounded-xl font-metric-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="sealInput" placeholder="Scan or enter barcode" required="" type="text"/>
+<button class="bg-surface-container-high hover:bg-surface-bright px-4 py-3 rounded-xl text-on-surface transition-all flex items-center justify-center cursor-pointer" onclick="simulateScan()" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Geotagged Camera / Photo Evidence Uploader -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface-variant block">GEOTAGGED PHOTO EVIDENCE (Auto GPS/UTC Stamp)</label>
+<div class="border-2 border-dashed border-outline-variant hover:border-primary transition-all rounded-xl p-6 flex flex-col items-center justify-center gap-3 bg-surface-container-low cursor-pointer relative overflow-hidden" id="dropZone">
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" id="fileInput" multiple="" onchange="handleFileSelect(event)" type="file"/>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+</div>
+<div class="text-center">
+<p class="font-headline-sm text-on-surface">Drag &amp; drop evidence photos here, or click to capture</p>
+<p class="font-body-sm text-on-surface-variant mt-1">EXIF metadata, GPS coordinates, and UTC epoch will be cryptographically locked.</p>
+</div>
+</div>
+<!-- Uploaded thumbnails preview container -->
+<div class="flex flex-wrap gap-3 mt-2" id="thumbnailContainer"></div>
+</div>
+<!-- Inspector Notes -->
+<div>
+<label class="font-label-md text-on-surface-variant mb-1 block">INSPECTOR FIELD NOTES &amp; OBSERVATIONS</label>
+<textarea class="w-full bg-surface-container-low px-4 py-3 rounded-xl font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none" placeholder="Detail physical bypass routes, shunt placement, meter box condition..." rows="4"></textarea>
+</div>
+<!-- Submit Button Action -->
+<div class="flex items-center justify-end gap-4 pt-4 border-t border-surface-container-high">
+<button class="px-6 py-3 rounded-xl bg-surface-container-high text-on-surface font-headline-sm hover:bg-surface-bright transition-all cursor-pointer" type="reset">
+              Reset Form
+            </button>
+<button class="px-8 py-3 rounded-xl bg-primary text-on-primary font-headline-sm hover:opacity-90 transition-all flex items-center gap-2 cursor-pointer shadow-lg" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+              Submit Field Audit
+            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Legal Case Dossier Modal Preview / Overlay (Hidden by default) -->
+<div class="fixed inset-0 bg-surface-dim/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4" id="dossierModal">
+<div class="bg-surface-container max-w-2xl w-full p-8 rounded-xl shadow-2xl flex flex-col gap-6 relative border border-primary/20">
+<button class="absolute top-6 right-6 w-8 h-8 rounded-xl bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeDossierModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<span class="font-label-md text-primary tracking-widest uppercase">WATTGUARD AI FORENSIC SUITE</span>
+<h2 class="font-headline-lg text-on-surface">Legal Case Dossier Generated</h2>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col gap-3 font-metric-sm text-on-surface">
+<div class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">DOSSIER ID:</span>
+<span>DOS-202X-99482-SEC7</span>
+</div>
+<div class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">TARGET METER:</span>
+<span>MTR-88392-AX (Industrial Sector 7)</span>
+</div>
+<div class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">ESTIMATED REVENUE LOSS:</span>
+<span class="text-error">$34,820.00 USD</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">CRYPTOGRAPHIC HASH:</span>
+<span class="text-secondary truncate max-w-[280px]">sha256:8f9b2c3a1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">
+        All telemetry records, photo evidence with embedded GPS/UTC stamps, and inspector statements have been compiled into an immutable legal package ready for utility arbitration or municipal enforcement filing.
+      </p>
+<div class="flex items-center justify-end gap-4 pt-2">
+<button class="px-6 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-headline-sm hover:bg-surface-bright transition-all cursor-pointer" onclick="closeDossierModal()">
+          Close Preview
+        </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary text-on-primary font-headline-sm hover:opacity-90 transition-all flex items-center gap-2 cursor-pointer" onclick="alert('Dossier package securely exported to secure cloud vault.'); closeDossierModal();">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Export PDF &amp; Evidence Package
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Script -->
+<script>
+    function performLookup() {
+      const input = document.getElementById('lookupInput').value.trim();
+      const resultDiv = document.getElementById('lookupResult');
+      if(input.length > 0) {
+        resultDiv.classList.remove('hidden');
+      } else {
+        alert('Please enter a valid Consumer ID or Meter Serial.');
+      }
+    }
+
+    function selectQueueItem(meterId, locationName) {
+      document.getElementById('lookupInput').value = meterId;
+      document.getElementById('lookupResult').classList.remove('hidden');
+      const badge = document.getElementById('activeTargetBadge');
+      badge.textContent = `Active: ${meterId}`;
+      badge.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function simulateScan() {
+      const sealInput = document.getElementById('sealInput');
+      const randomBarcode = 'SEAL-' + Math.floor(100000 + Math.random() * 900000);
+      sealInput.value = randomBarcode;
+    }
+
+    function handleFileSelect(event) {
+      const container = document.getElementById('thumbnailContainer');
+      container.innerHTML = '';
+      const files = event.target.files;
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const div = document.createElement('div');
+          div.className = 'relative w-24 h-24 rounded-xl overflow-hidden border border-primary/40 bg-surface-container-low flex items-center justify-center';
+          div.innerHTML = `
+            <img src="${e.target.result}" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-surface-dim/80 text-[8px] font-metric-sm text-secondary text-center py-0.5">GPS+UTC</div>
+          `;
+          container.appendChild(div);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function submitFindings(event) {
+      event.preventDefault();
+      alert('Field audit findings submitted successfully and synced to WattGuard AI Enterprise ledger.');
+      document.getElementById('findingsForm').reset();
+      document.getElementById('thumbnailContainer').innerHTML = '';
+      document.getElementById('lookupResult').classList.add('hidden');
+      document.getElementById('activeTargetBadge').classList.add('hidden');
+    }
+
+    function triggerDossierModal() {
+      document.getElementById('dossierModal').classList.remove('hidden');
+    }
+
+    function closeDossierModal() {
+      document.getElementById('dossierModal').classList.add('hidden');
+    }
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">GridCockpit</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prioritized-inspection-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Inspection Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-explainability-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="field-inspector-mobile-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Mobile Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">System Nominal</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-space-md pointer-events-none" id="toast-container"></div>
+<!-- Top Ingestion & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-lg bg-surface-container-low p-space-lg rounded-xl">
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-sm rounded-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md uppercase text-on-surface">Database Connected</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-metric-sm">smart_toy</span>
+<span class="font-label-md uppercase text-on-surface">ML Model v4.2 Active</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-sm rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-metric-sm">speed</span>
+<span class="font-label-md uppercase text-on-surface">1,428,920 Meters Loaded</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-space-sm px-space-xl py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-all cursor-pointer" id="ingest-btn" onclick="triggerIngest()">
+<span class="material-symbols-outlined text-[18px]" id="ingest-icon">upload</span>
+<span id="ingest-text">Ingest Local Dataset</span>
+</button>
+</div>
+</div>
+<!-- Key Metrics KPI Grid (4 Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="text-on-surface-variant font-body-sm uppercase tracking-wider">Active Meters Monitored</span>
+<span class="material-symbols-outlined text-primary text-metric-md">electric_meter</span>
+</div>
+<div class="flex flex-col">
+<span class="font-metric-lg text-on-surface tracking-tight">1,428,920</span>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-metric-sm">trending_up</span>
+<span class="font-label-md">+1.2% this month</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="text-on-surface-variant font-body-sm uppercase tracking-wider">Tamper & Anomaly Alerts</span>
+<span class="material-symbols-outlined text-error text-metric-md">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-metric-lg text-on-surface tracking-tight">342</span>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="px-space-sm py-0.5 bg-error-container text-on-error-container rounded text-label-sm font-semibold">89 Critical</span>
+<span class="px-space-sm py-0.5 bg-tertiary-container text-on-tertiary-container rounded text-label-sm font-semibold">253 High</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="text-on-surface-variant font-body-sm uppercase tracking-wider">Unbilled Energy Loss</span>
+<span class="material-symbols-outlined text-tertiary text-metric-md">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-metric-lg text-on-surface tracking-tight">4,820 MWh</span>
+<div class="flex items-center gap-space-xs mt-space-sm text-tertiary">
+<span class="material-symbols-outlined text-metric-sm">info</span>
+<span class="font-label-md">~ $1.24M residual</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-space-lg">
+<span class="text-on-surface-variant font-body-sm uppercase tracking-wider">Revenue at Risk</span>
+<span class="material-symbols-outlined text-primary-container text-metric-md">payments</span>
+</div>
+<div class="flex flex-col">
+<span class="font-metric-lg text-on-surface tracking-tight">$3.48M</span>
+<div class="flex items-center gap-space-xs mt-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-metric-sm">verified</span>
+<span class="font-label-md">95% Confidence ±$210k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vulnerable Feeder Ranking Table -->
+<div class="bg-surface-container-low rounded-xl p-space-xl flex flex-col">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-xl">
+<div>
+<h2 class="font-headline-md text-on-surface">Vulnerable Feeder Ranking Manifest</h2>
+<p class="text-body-sm text-on-surface-variant mt-1">Real-time geospatial telemetry tracking phase imbalance and anomaly load profiles.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">search</span>
+<input class="bg-surface-container text-on-surface pl-10 pr-space-md py-2 rounded-lg text-body-sm focus:outline-none focus:ring-1 focus:ring-primary w-64" id="feeder-search" onkeyup="filterFeeders()" placeholder="Filter by ID or Substation..." type="text"/>
+</div>
+<button class="flex items-center gap-space-sm bg-surface-container px-space-lg py-2 rounded-lg text-on-surface hover:bg-surface-container-high transition-colors text-body-sm font-headline-sm" onclick="sortFeeders()">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+          Sort Risk
+        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="feeder-table">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-md uppercase border-b border-surface-container-high">
+<th class="p-space-md">Feeder ID</th>
+<th class="p-space-md">Substation</th>
+<th class="p-space-md">Phase Imbalance %</th>
+<th class="p-space-md">Unaccounted Energy Residual</th>
+<th class="p-space-md">Risk Score</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface divide-y divide-surface-container">
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="p-space-md font-metric-sm text-primary">FD-8802-N</td>
+<td class="p-space-md">North Substation Alpha</td>
+<td class="p-space-md font-metric-sm text-error">18.4%</td>
+<td class="p-space-md font-metric-sm">142,500 kWh</td>
+<td class="p-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-sm text-error">94.2</span>
+<div class="w-32 bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 94.2%"></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="p-space-md font-metric-sm text-primary">FD-3310-E</td>
+<td class="p-space-md">East Industrial Hub</td>
+<td class="p-space-md font-metric-sm text-tertiary">14.2%</td>
+<td class="p-space-md font-metric-sm">98,200 kWh</td>
+<td class="p-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-sm text-tertiary">81.5</span>
+<div class="w-32 bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 81.5%"></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="p-space-md font-metric-sm text-primary">FD-1109-S</td>
+<td class="p-space-md">South Metro Grid</td>
+<td class="p-space-md font-metric-sm text-error">19.1%</td>
+<td class="p-space-md font-metric-sm">165,000 kWh</td>
+<td class="p-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-sm text-error">91.8</span>
+<div class="w-32 bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 91.8%"></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="p-space-md font-metric-sm text-primary">FD-9942-W</td>
+<td class="p-space-md">West Valley Substation</td>
+<td class="p-space-md font-metric-sm text-secondary">6.5%</td>
+<td class="p-space-md font-metric-sm">41,300 kWh</td>
+<td class="p-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-sm text-secondary">42.1</span>
+<div class="w-32 bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 42.1%"></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="p-space-md font-metric-sm text-primary">FD-4421-C</td>
+<td class="p-space-md">Central Commercial Core</td>
+<td class="p-space-md font-metric-sm text-tertiary">11.8%</td>
+<td class="p-space-md font-metric-sm">82,100 kWh</td>
+<td class="p-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-metric-sm text-tertiary">76.4</span>
+<div class="w-32 bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 76.4%"></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<script>
+    let sortAsc = false;
+
+    function triggerIngest() {
+      const btn = document.getElementById('ingest-btn');
+      const icon = document.getElementById('ingest-icon');
+      const text = document.getElementById('ingest-text');
+
+      btn.disabled = true;
+      btn.classList.add('opacity-75');
+      icon.classList.add('animate-spin');
+      icon.textContent = 'refresh';
+      text.textContent = 'Processing Stream...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.classList.remove('opacity-75');
+        icon.classList.remove('animate-spin');
+        icon.textContent = 'upload';
+        text.textContent = 'Ingest Local Dataset';
+
+        showToast('Dataset Ingested Successfully: 14,200 new meter vectors processed.', 'success');
+      }, 1800);
+    }
+
+    function showToast(message, type) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `pointer-events-auto flex items-center gap-space-md px-space-lg py-space-md rounded-xl bg-surface-container-high text-on-surface shadow-xl border border-primary/20 transform translate-y-4 opacity-0 transition-all duration-300`;
+      
+      const icon = type === 'success' ? 'check_circle' : 'info';
+      const iconColor = type === 'success' ? 'text-secondary' : 'text-primary';
+
+      toast.innerHTML = `
+        <span class="material-symbols-outlined ${iconColor}">${icon}</span>
+        <span class="font-body-md">${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function filterFeeders() {
+      const input = document.getElementById('feeder-search').value.toLowerCase();
+      const table = document.getElementById('feeder-table');
+      const rows = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < rows.length; i++) {
+        const id = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+        const sub = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+        if (id.includes(input) || sub.includes(input)) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+
+    function sortFeeders() {
+      const table = document.getElementById('feeder-table');
+      const tbody = table.getElementsByTagName('tbody')[0];
+      const rows = Array.from(tbody.getElementsByTagName('tr'));
+
+      rows.sort((a, b) => {
+        const scoreA = parseFloat(a.getElementsByTagName('td')[4].textContent.trim());
+        const scoreB = parseFloat(b.getElementsByTagName('td')[4].textContent.trim());
+        return sortAsc ? scoreA - scoreB : scoreB - scoreA;
+      });
+
+      sortAsc = !sortAsc;
+      rows.forEach(row => tbody.appendChild(row));
+      showToast(`Sorted by Risk Score (${sortAsc ? 'Ascending' : 'Descending'})`, 'info');
+    }
+  </script>
+</div></main></div></body></html>

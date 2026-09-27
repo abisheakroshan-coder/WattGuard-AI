@@ -1,14 +1,36 @@
-notebooks/full.csv
-notebooks/small.csv
+# Node / Frontend heavy builds (Crucial!)
+node_modules/
+**/node_modules/
+dist/
+build/
+.vite/
 
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
-
+# Python Virtual Environments & Cache (Crucial!)
 venv/
 .venv/
+env/
+**/__pycache__/
+*.py[cod]
+*.pyc
 
-.vscode/
+# Local databases & uploads
+*.db
+*.sqlite3
+uploads/
 
+# Large Datasets (>50MB)
+data/*.csv
+data/*.parquet
+*.zip
+*.tar.gz
+
+# Environment secrets & OS files
+.env
 .DS_Store
-Thumbs.db
+Thumbs.db*.csv
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.db
+*.sqlite3

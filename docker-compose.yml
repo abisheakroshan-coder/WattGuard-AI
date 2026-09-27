@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # =========================================================================
+  # 1. WattGuard AI - FastAPI Backend Application
+  # =========================================================================
+  wattguard-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wattguard-ai-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - PROJECT_NAME=WattGuard AI - AI-Assisted Power Theft & Unbilled Energy Decision-Support System
+      - ESTIMATED_DISPATCH_COST=50.0
+      - REGULATORY_PENALTY_RATE=0.25
+      - STANDARD_TECHNICAL_LOSS_RATE=0.05
+      # Default: Lightweight local SQLite database.
+      # To switch to PostgreSQL, uncomment the PostgreSQL URL below and enable the postgres service.
+      - DATABASE_URL=sqlite+aiosqlite:////workspace/wattguard.db
+      - SYNC_DATABASE_URL=sqlite:////workspace/wattguard.db
+      # - DATABASE_URL=postgresql+asyncpg://wattguard_user:wattguard_pass@wattguard-db:5432/wattguard
+      # - SYNC_DATABASE_URL=postgresql://wattguard_user:wattguard_pass@wattguard-db:5432/wattguard
+    volumes:
+      - ./data:/workspace/data
+      - ./uploads:/workspace/uploads
+      - ./backend/app/artifacts:/workspace/app/artifacts
+      - db_data:/workspace
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/api/v1/system/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+  # =========================================================================
+  # 2. (Optional) Production PostgreSQL Database Engine
+  # =========================================================================
+  # wattguard-db:
+  #   image: postgres:16-alpine
+  #   container_name: wattguard-ai-postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_USER=wattguard_user
+  #     - POSTGRES_PASSWORD=wattguard_pass
+  #     - POSTGRES_DB=wattguard
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pg_data:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U wattguard_user -d wattguard"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+volumes:
+  db_data: # pg_data:

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">GridCockpit</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prioritized-inspection-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Inspection Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-explainability-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="field-inspector-mobile-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Mobile Portal</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">System Nominal</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-on-surface">Model Governance & Active Learning</h1>
+<p class="text-body-md text-on-surface-variant">Continuous ML lifecycle management, concept drift tracking, and active retraining triggers.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-space-md py-space-sm bg-surface-container-high rounded-lg text-label-md font-metric-md text-primary">v4.8.2-PROD</span>
+<span class="px-space-md py-space-sm bg-secondary/10 text-secondary rounded-lg text-label-md font-metric-md">Active Sync</span>
+</div>
+</div>
+<!-- Section 1: Model Health & Evaluation Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-space-lg text-primary/20">
+<span class="material-symbols-outlined text-[48px]">precision_manufacturing</span>
+</div>
+<div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Precision (Theft Class)</span>
+<div class="text-metric-lg font-metric-md text-on-surface mt-space-sm">94.8%</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-lg text-secondary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+1.4% vs last baseline</span>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-space-lg text-primary/20">
+<span class="material-symbols-outlined text-[48px]">radar</span>
+</div>
+<div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Recall (Sensitivity)</span>
+<div class="text-metric-lg font-metric-md text-on-surface mt-space-sm">91.2%</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-lg text-secondary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+0.8% vs last baseline</span>
+</div>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-space-lg text-primary/20">
+<span class="material-symbols-outlined text-[48px]">donut_large</span>
+</div>
+<div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">F1-Score</span>
+<div class="text-metric-lg font-metric-md text-on-surface mt-space-sm">92.9%</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-lg text-secondary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Optimal Balance</span>
+</div>
+</div>
+<!-- Metric Card 4 -->
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 p-space-lg text-primary/20">
+<span class="material-symbols-outlined text-[48px]">show_chart</span>
+</div>
+<div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">ROC-AUC</span>
+<div class="text-metric-lg font-metric-md text-on-surface mt-space-sm">0.978</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-lg text-tertiary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">monitoring</span>
+<span>High Discriminative Power</span>
+</div>
+</div>
+</div>
+<!-- Confusion Matrix & Concept Drift Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Confusion Matrix Visualizer -->
+<div class="lg:col-span-6 bg-surface-container p-space-xl rounded-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h2 class="font-headline-md text-on-surface">Confusion Matrix</h2>
+<p class="text-body-sm text-on-surface-variant">Model Predictions vs Verified Field Inspection Outcomes</p>
+</div>
+<div class="flex bg-surface-dim p-space-xs rounded-lg">
+<button class="px-space-md py-space-sm rounded text-label-md bg-primary text-on-primary transition-all" id="matrix-btn-count" onclick="switchMatrix('count')">Counts</button>
+<button class="px-space-md py-space-sm rounded text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="matrix-btn-percent" onclick="switchMatrix('percent')">Normalized %</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-md text-center my-space-lg">
+<div></div>
+<div class="text-label-md text-on-surface-variant uppercase">Predicted Theft</div>
+<div class="text-label-md text-on-surface-variant uppercase">Predicted Normal</div>
+<div class="text-label-md text-on-surface-variant uppercase flex items-center justify-center">Actual Theft</div>
+<div class="bg-secondary/20 p-space-xl rounded-xl flex flex-col items-center justify-center border border-secondary/30" id="cell-tp">
+<span class="font-metric-md text-secondary text-[24px]">4,280</span>
+<span class="text-label-sm text-secondary uppercase mt-space-xs">True Positive</span>
+</div>
+<div class="bg-error/10 p-space-xl rounded-xl flex flex-col items-center justify-center border border-error/20" id="cell-fn">
+<span class="font-metric-md text-error text-[24px]">312</span>
+<span class="text-label-sm text-error uppercase mt-space-xs">False Negative</span>
+</div>
+<div class="text-label-md text-on-surface-variant uppercase flex items-center justify-center">Actual Normal</div>
+<div class="bg-error/10 p-space-xl rounded-xl flex flex-col items-center justify-center border border-error/20" id="cell-fp">
+<span class="font-metric-md text-error text-[24px]">184</span>
+<span class="text-label-sm text-error uppercase mt-space-xs">False Positive</span>
+</div>
+<div class="bg-secondary/20 p-space-xl rounded-xl flex flex-col items-center justify-center border border-secondary/30" id="cell-tn">
+<span class="font-metric-md text-secondary text-[24px]">18,420</span>
+<span class="text-label-sm text-secondary uppercase mt-space-xs">True Negative</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-space-md">
+<span>Evaluated over 23,196 verified field audits</span>
+<span class="text-primary cursor-pointer hover:underline">Export Confusion Matrix CSV</span>
+</div>
+</div>
+<!-- Concept Drift Monitor -->
+<div class="lg:col-span-6 bg-surface-container p-space-xl rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-headline-md text-on-surface">Concept Drift Monitor</h2>
+<span class="px-space-md py-space-sm bg-secondary/20 text-secondary rounded-full text-label-sm">Drift Threshold: Stable</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Tracking false-alarm rate drift and feature distribution shift over the past 30 days.</p>
+<!-- Simulated Chart Representation -->
+<div class="h-48 w-full flex items-end gap-1 px-space-md py-space-md bg-surface-dim rounded-xl relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-full border-t border-dashed border-error/40 absolute top-12"></div>
+<span class="absolute top-8 right-4 text-label-sm text-error">Critical Drift Limit (5.0%)</span>
+</div>
+<!-- Bar Elements -->
+<div class="flex-1 bg-primary/40 h-[20%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[22%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[25%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[21%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[28%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[30%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[27%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[35%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[32%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[40%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[45%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[42%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[50%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[48%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[55%] rounded-t"></div>
+<div class="flex-1 bg-primary/60 h-[60%] rounded-t"></div>
+<div class="flex-1 bg-primary/60 h-[58%] rounded-t"></div>
+<div class="flex-1 bg-primary/60 h-[65%] rounded-t"></div>
+<div class="flex-1 bg-primary/60 h-[62%] rounded-t"></div>
+<div class="flex-1 bg-primary/80 h-[70%] rounded-t"></div>
+<div class="flex-1 bg-primary/80 h-[68%] rounded-t"></div>
+<div class="flex-1 bg-primary/80 h-[75%] rounded-t"></div>
+<div class="flex-1 bg-primary/80 h-[72%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[80%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[78%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[82%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[88%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t"></div>
+<div class="flex-1 bg-secondary h-[90%] rounded-t"></div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-md mt-space-lg pt-space-md border-t border-surface-dim">
+<div>
+<span class="text-label-sm text-on-surface-variant uppercase">Current FAR</span>
+<div class="text-metric-md text-on-surface">1.82%</div>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant uppercase">Kolmogorov-Smirnov</span>
+<span class="text-metric-md text-secondary block">0.042 (OK)</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant uppercase">Last Re-index</span>
+<div class="text-metric-md text-on-surface">14d ago</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Human-in-the-Loop Active Retraining Trigger -->
+<div class="bg-surface-container p-space-xl rounded-xl">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg mb-space-xl">
+<div>
+<h2 class="font-headline-md text-on-surface">Active Learning Retraining Pipeline</h2>
+<p class="text-body-sm text-on-surface-variant">Queue new verified field labels to retrain gradient boosting & graph neural network artifacts.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="bg-surface-dim px-space-lg py-space-md rounded-lg flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary">dataset</span>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Ready Labels</span>
+<span class="font-metric-md text-on-surface text-[18px]">1,420 Samples</span>
+</div>
+</div>
+<button class="px-space-xl py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors flex items-center gap-space-sm" id="retrain-btn" onclick="triggerRetrain()">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+          Trigger Retraining Job
+        </button>
+</div>
+</div>
+<!-- Retraining Progress & Comparison Area (Hidden Initially) -->
+<div class="hidden space-y-space-lg bg-surface-dim p-space-xl rounded-xl" id="retrain-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-3 h-3 rounded-full bg-primary animate-ping"></span>
+<span class="font-headline-sm text-on-surface" id="retrain-status-text">Initializing distributed cluster nodes...</span>
+</div>
+<span class="font-metric-md text-primary text-[18px]" id="retrain-percent">0%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-0 transition-all duration-300" id="retrain-progress-bar"></div>
+</div>
+<!-- Comparison Card (Appears on Completion) -->
+<div class="hidden grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-space-md" id="retrain-comparison">
+<div class="bg-surface-container p-space-lg rounded-xl border border-surface-container-high">
+<span class="text-label-md text-on-surface-variant uppercase">Current Artifact (v4.8.2)</span>
+<div class="grid grid-cols-3 gap-space-md mt-space-md">
+<div>
+<span class="text-label-sm text-on-surface-variant">Precision</span>
+<div class="font-metric-md text-on-surface">94.8%</div>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant">Recall</span>
+<div class="font-metric-md text-on-surface">91.2%</div>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant">F1</span>
+<div class="font-metric-md text-on-surface">92.9%</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl border border-secondary/40 relative">
+<span class="absolute top-3 right-3 px-space-sm py-space-xs bg-secondary/20 text-secondary rounded text-label-sm">Candidate v4.9.0</span>
+<span class="text-label-md text-secondary uppercase">Retrained Candidate</span>
+<div class="grid grid-cols-3 gap-space-md mt-space-md">
+<div>
+<span class="text-label-sm text-on-surface-variant">Precision</span>
+<div class="font-metric-md text-secondary">96.1% <span class="text-xs text-secondary">(+1.3%)</span></div>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant">Recall</span>
+<div class="font-metric-md text-secondary">93.4% <span class="text-xs text-secondary">(+2.2%)</span></div>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant">F1</span>
+<div class="font-metric-md text-secondary">94.7% <span class="text-xs text-secondary">(+1.8%)</span></div>
+</div>
+</div>
+<div class="mt-space-lg flex justify-end gap-space-md">
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded text-label-md" onclick="dismissRetrain()">Discard</button>
+<button class="px-space-md py-space-sm bg-secondary text-on-secondary rounded text-label-md font-bold" onclick="deployArtifact()">Promote to Production</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Public Whistleblower Tip Correlator -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Input Form -->
+<div class="lg:col-span-6 bg-surface-container p-space-xl rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-headline-md text-on-surface">Public Whistleblower Tip Correlator</h2>
+<span class="material-symbols-outlined text-primary">lock_person</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Ingest raw tip text, address, and unstructured observations to instantly cross-reference spatial telemetry and match smart meter anomalies.</p>
+<form class="space-y-space-md" id="tip-form" onsubmit="submitTip(event)">
+<div>
+<label class="block text-label-md text-on-surface-variant uppercase mb-space-xs">Address or Landmark</label>
+<input class="w-full bg-surface-dim border border-outline-variant rounded-lg px-space-md py-space-md text-on-surface focus:border-primary outline-none text-body-md" id="tip-address" placeholder="e.g., 402 Industrial Parkway, Warehouse 4" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant uppercase mb-space-xs">Observed Activity / Description</label>
+<textarea class="w-full bg-surface-dim border border-outline-variant rounded-lg px-space-md py-space-md text-on-surface focus:border-primary outline-none text-body-md resize-none" id="tip-desc" placeholder="Describe unusual power usage, loud industrial transformers running at night, or suspected meter tampering..." required="" rows="3"></textarea>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant uppercase mb-space-xs">Evidence Photos (Optional)</label>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-space-lg text-center cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px] mb-space-xs">add_a_photo</span>
+<span class="text-body-sm text-on-surface-variant block">Drop image files here or click to upload</span>
+</div>
+</div>
+<button class="w-full py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-space-sm mt-space-md" type="submit">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+            Correlate Tip with Smart Meters
+          </button>
+</form>
+</div>
+</div>
+<!-- Matching Results Panel -->
+<div class="lg:col-span-6 bg-surface-container p-space-xl rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-on-surface mb-space-md">Spatial Correlation Results</h3>
+<p class="text-body-sm text-on-surface-variant mb-space-lg" id="result-subtitle">Submit a whistleblower tip to run real-time geospatial vector matching against SCADA meter feeds.</p>
+<!-- Empty State -->
+<div class="h-64 flex flex-col items-center justify-center bg-surface-dim rounded-xl border border-surface-container-high text-center p-space-xl" id="result-empty">
+<span class="material-symbols-outlined text-outline text-[48px] mb-space-md">location_searching</span>
+<span class="text-body-md text-on-surface-variant">Awaiting input payload for spatial vector cross-matching.</span>
+</div>
+<!-- Populated Results (Hidden initially) -->
+<div class="hidden space-y-space-md" id="result-content">
+<div class="p-space-md bg-surface-dim rounded-lg border-l-4 border-error flex items-center justify-between">
+<div>
+<span class="text-label-sm text-error uppercase font-bold">Top Match (98.4% Confidence)</span>
+<div class="font-headline-sm text-on-surface mt-space-xs">Meter ID: #MTR-88492 (400 Industrial Pkwy)</div>
+<span class="text-body-sm text-on-surface-variant">Discrepancy: -42% unbilled active power drop during peak hours.</span>
+</div>
+<button class="px-space-md py-space-sm bg-error text-on-error rounded text-label-md font-bold">Dispatch Inspector</button>
+</div>
+<div class="p-space-md bg-surface-dim rounded-lg border-l-4 border-tertiary flex items-center justify-between">
+<div>
+<span class="text-label-sm text-tertiary uppercase font-bold">Secondary Match (84.1% Confidence)</span>
+<div class="font-headline-sm text-on-surface mt-space-xs">Meter ID: #MTR-88501 (408 Industrial Pkwy)</div>
+<span class="text-body-sm text-on-surface-variant">Discrepancy: Unregistered bypass shunt detected via harmonic analysis.</span>
+</div>
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded text-label-md">Review Telemetry</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-space-lg border-t border-surface-dim mt-space-lg">
+<span>GIS Vector DB: Connected</span>
+<span class="text-secondary">API Latency: 42ms</span>
+</div>
+</div>
+</div>
+<script>
+    function switchMatrix(type) {
+      const btnCount = document.getElementById('matrix-btn-count');
+      const btnPercent = document.getElementById('matrix-btn-percent');
+      const tp = document.getElementById('cell-tp');
+      const fn = document.getElementById('cell-fn');
+      const fp = document.getElementById('cell-fp');
+      const tn = document.getElementById('cell-tn');
+
+      if(type === 'count') {
+        btnCount.className = "px-space-md py-space-sm rounded text-label-md bg-primary text-on-primary transition-all";
+        btnPercent.className = "px-space-md py-space-sm rounded text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+        tp.querySelector('span').innerText = "4,280";
+        fn.querySelector('span').innerText = "312";
+        fp.querySelector('span').innerText = "184";
+        tn.querySelector('span').innerText = "18,420";
+      } else {
+        btnPercent.className = "px-space-md py-space-sm rounded text-label-md bg-primary text-on-primary transition-all";
+        btnCount.className = "px-space-md py-space-sm rounded text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+        tp.querySelector('span').innerText = "18.4%";
+        fn.querySelector('span').innerText = "1.3%";
+        fp.querySelector('span').innerText = "0.8%";
+        tn.querySelector('span').innerText = "79.4%";
+      }
+    }
+
+    function triggerRetrain() {
+      const container = document.getElementById('retrain-container');
+      const btn = document.getElementById('retrain-btn');
+      const progressBar = document.getElementById('retrain-progress-bar');
+      const statusText = document.getElementById('retrain-status-text');
+      const percentText = document.getElementById('retrain-percent');
+      const comparison = document.getElementById('retrain-comparison');
+
+      container.classList.remove('hidden');
+      btn.disabled = true;
+      btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+      let progress = 0;
+      const steps = [
+        { at: 15, text: "Ingesting 1,420 verified field labels..." },
+        { at: 40, text: "Extracting temporal & spatial feature embeddings..." },
+        { at: 70, text: "Fine-tuning Graph Neural Network weights..." },
+        { at: 90, text: "Running cross-validation against holdout test set..." },
+        { at: 100, text: "Retraining job completed successfully!" }
+      ];
+
+      const interval = setInterval(() => {
+        progress += 2;
+        if(progress > 100) progress = 100;
+        
+        progressBar.style.width = progress + '%';
+        percentText.innerText = progress + '%';
+
+        const currentStep = steps.find(s => s.at === progress);
+        if(currentStep) {
+          statusText.innerText = currentStep.text;
+        }
+
+        if(progress === 100) {
+          clearInterval(interval);
+          comparison.classList.remove('hidden');
+        }
+      }, 50);
+    }
+
+    function dismissRetrain() {
+      document.getElementById('retrain-container').classList.add('hidden');
+      document.getElementById('retrain-comparison').classList.add('hidden');
+      document.getElementById('retrain-progress-bar').style.width = '0%';
+      const btn = document.getElementById('retrain-btn');
+      btn.disabled = false;
+      btn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
+
+    function deployArtifact() {
+      alert("Artifact v4.9.0 successfully promoted to SCADA production inference cluster!");
+      dismissRetrain();
+    }
+
+    function submitTip(event) {
+      event.preventDefault();
+      const addr = document.getElementById('tip-address').value;
+      const subtitle = document.getElementById('result-subtitle');
+      const emptyState = document.getElementById('result-empty');
+      const content = document.getElementById('result-content');
+
+      subtitle.innerText = `Matched location: "${addr}" against 4 active feeder nodes.`;
+      emptyState.classList.add('hidden');
+      content.classList.remove('hidden');
+    }
+  </script>
+</div></main></div></body></html>

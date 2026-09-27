@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">GridCockpit</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prioritized-inspection-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Inspection Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-explainability-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Fleet Navigator</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="field-inspector-mobile-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Mobile Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">System Nominal</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full max-w-7xl mx-auto px-space-xl py-space-xl text-on-surface">
+<!-- Top Bar / Context Status -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg mb-space-xl">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="text-label-sm font-metric-sm text-secondary uppercase tracking-wider">Field Operative Portal</span>
+<span class="text-outline">/</span>
+<span class="text-label-sm font-metric-sm text-on-surface-variant uppercase tracking-wider">Terminal ID: MX-8849-B</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Active Inspection & Dossier Terminal</h1>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="bg-surface-container px-space-md py-space-sm rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">satellite_alt</span>
+<span class="text-body-sm font-metric-sm text-on-surface">GPS Locked: 34.0522° N, 118.2437° W</span>
+</div>
+<div class="bg-surface-container px-space-md py-space-sm rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span class="text-body-sm font-metric-sm text-on-surface" id="utc-clock">--:--:-- UTC</span>
+</div>
+</div>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Verification Lookup & Submission Form (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- 1. Inspection Verification Lookup Card -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col gap-space-md shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">search</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Inspection Verification Lookup</h2>
+</div>
+<span class="text-label-md bg-surface px-space-md py-space-xs rounded text-primary">SCADA Linked</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Enter consumer account reference or meter serial number to retrieve encrypted telemetry manifest.</p>
+<div class="flex flex-col sm:flex-row gap-space-md mt-space-sm">
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 flex items-center pl-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</span>
+<input class="w-full bg-surface text-on-surface pl-10 pr-space-md py-space-md rounded-lg text-body-md focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-outline-variant" id="lookup-input" placeholder="e.g. CUST-99420-TX or MTR-442190" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-space-xl py-space-md rounded-lg font-headline-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-space-sm" id="lookup-btn" onclick="executeLookup()">
+<span class="material-symbols-outlined text-[18px]">bolt</span> Pull Manifest
+          </button>
+</div>
+<!-- Retrieved Context Preview (Hidden by default, shown on lookup) -->
+<div class="hidden mt-space-md bg-surface rounded-lg p-space-md flex flex-col gap-space-md transition-all" id="lookup-result">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-md">
+<div>
+<span class="text-label-sm text-secondary uppercase font-metric-sm">Target Verified</span>
+<div class="text-headline-sm text-on-surface font-headline-sm" id="res-consumer-name">Eleanor Vance (CUST-99420-TX)</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm text-outline uppercase font-metric-sm">Risk Index</span>
+<div class="text-metric-sm text-error font-metric-md">94.2% CRITICAL</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md text-body-sm">
+<div>
+<span class="text-outline block text-label-sm">Meter Serial</span>
+<span class="font-metric-sm text-on-surface" id="res-meter">MTR-442190-EX</span>
+</div>
+<div>
+<span class="text-outline block text-label-sm">Premises Type</span>
+<span class="font-metric-sm text-on-surface">Industrial Storage</span>
+</div>
+<div>
+<span class="text-outline block text-label-sm">Last Baseline</span>
+<span class="font-metric-sm text-on-surface">4,210 kWh/mo</span>
+</div>
+<div>
+<span class="text-outline block text-label-sm">Anomaly Vector</span>
+<span class="font-metric-sm text-error">Neutral Bridge Bypass</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Structured Findings Submission Form -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col gap-space-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Structured Findings Submission</h2>
+</div>
+<span class="text-label-md bg-surface px-space-md py-space-xs rounded text-secondary font-metric-sm">POST /field/inspections/submit</span>
+</div>
+<form class="flex flex-col gap-space-lg" id="inspection-form" onsubmit="submitInspection(event)">
+<!-- Outcome Dropdown -->
+<div class="flex flex-col gap-space-sm">
+<label class="text-body-sm font-headline-sm text-on-surface">Inspection Outcome Classification *</label>
+<div class="relative">
+<select class="w-full bg-surface text-on-surface px-space-md py-space-md rounded-lg text-body-md appearance-none focus:outline-none focus:ring-1 focus:ring-primary" id="outcome-select" required="">
+<option disabled="" selected="" value="">Select verified outcome...</option>
+<option value="CONFIRMED_THEFT_BYPASS">CONFIRMED_THEFT_BYPASS</option>
+<option value="METER_FAULT">METER_FAULT</option>
+<option value="GENUINE_USAGE_CHANGE">GENUINE_USAGE_CHANGE</option>
+<option value="PREMISES_VACANT">PREMISES_VACANT</option>
+<option value="REINSPECTION_REQUIRED">REINSPECTION_REQUIRED</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</div>
+</div>
+<!-- Metrics Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<label class="text-body-sm font-headline-sm text-on-surface">Observed Meter Reading (kWh) *</label>
+<input class="w-full bg-surface text-on-surface px-space-md py-space-md rounded-lg text-body-md focus:outline-none focus:ring-1 focus:ring-primary font-metric-sm" id="meter-reading" placeholder="e.g. 54892.4" required="" step="0.1" type="number"/>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="text-body-sm font-headline-sm text-on-surface">Line Current (Amps) *</label>
+<input class="w-full bg-surface text-on-surface px-space-md py-space-md rounded-lg text-body-md focus:outline-none focus:ring-1 focus:ring-primary font-metric-sm" id="line-current" placeholder="e.g. 142.50" required="" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Replacement Seal Barcode -->
+<div class="flex flex-col gap-space-sm">
+<label class="text-body-sm font-headline-sm text-on-surface">Replacement Seal Barcode</label>
+<div class="flex gap-space-md">
+<input class="flex-1 bg-surface text-on-surface px-space-md py-space-md rounded-lg text-body-md focus:outline-none focus:ring-1 focus:ring-primary font-metric-sm" id="seal-barcode" placeholder="Scan or enter seal serial..." type="text"/>
+<button class="bg-surface-container-high px-space-lg py-space-md rounded-lg text-body-sm hover:bg-surface-bright transition-colors flex items-center gap-space-sm" onclick="simulateBarcodeScan()" type="button">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span> Scan
+              </button>
+</div>
+</div>
+<!-- Inspector Notes -->
+<div class="flex flex-col gap-space-sm">
+<label class="text-body-sm font-headline-sm text-on-surface">Inspector Field Notes & Observations</label>
+<textarea class="w-full bg-surface text-on-surface p-space-md rounded-lg text-body-md focus:outline-none focus:ring-1 focus:ring-primary resize-none" id="inspector-notes" placeholder="Detail physical tampering evidence, conduit condition, seal status..." rows="3"></textarea>
+</div>
+<!-- Submit Action -->
+<button class="w-full bg-secondary text-on-secondary font-headline-sm py-space-md rounded-lg hover:bg-secondary-container transition-colors flex items-center justify-center gap-space-sm mt-space-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span> Transmit Verified Findings
+          </button>
+</form>
+</div>
+</div>
+<!-- Right Column: Evidence Uploader & Legal Dossier Generator (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- 3. Geotagged Camera / Photo Evidence Uploader -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col gap-space-lg shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">photo_camera</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Geotagged Evidence Uploader</h2>
+</div>
+<span class="text-label-md bg-surface px-space-md py-space-xs rounded text-primary font-metric-sm">Auto-GPS / UTC</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Capture photographic proof with automatic device telemetry stamp embedded in EXIF metadata.</p>
+<!-- Dropzone / Trigger Area -->
+<div class="border-2 border-dashed border-outline-variant hover:border-primary bg-surface/50 rounded-xl p-space-xl flex flex-col items-center justify-center text-center cursor-pointer transition-colors relative overflow-hidden group" id="dropzone">
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" id="file-input" multiple="" onchange="handleFileSelect(event)" type="file"/>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-space-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[24px]">add_a_photo</span>
+</div>
+<div class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Drop photos or tap to capture</div>
+<div class="text-body-sm text-outline">GPS: 34.0522° N, 118.2437° W | UTC: Active Stamp</div>
+</div>
+<!-- Uploaded Evidence Preview List -->
+<div class="flex flex-col gap-space-sm max-h-60 overflow-y-auto" id="evidence-preview-container">
+<!-- Dynamically populated evidence items will appear here -->
+<div class="bg-surface p-space-sm rounded-lg flex items-center justify-between text-body-sm text-outline-variant italic">
+<span>No evidence files attached yet.</span>
+<span class="material-symbols-outlined text-[16px]">info</span>
+</div>
+</div>
+</div>
+<!-- 4. One-Click Legal Case Dossier Generator -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col gap-space-lg shadow-lg relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[180px]">gavel</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">description</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Legal Case Dossier</h2>
+</div>
+<span class="text-label-md bg-surface px-space-md py-space-xs rounded text-tertiary font-metric-sm">GET /field/dispute-dossier</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Compile court-admissible meter logs, baseline variance graphs, changepoint records, and photographic evidence into a secure PDF bundle.</p>
+<div class="bg-surface rounded-lg p-space-md flex flex-col gap-space-md">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-outline">Dossier Target Reference:</span>
+<span class="font-metric-sm text-on-surface" id="dossier-target-ref">CUST-99420-TX (Pending Lookup)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-outline">Evidence Manifest Count:</span>
+<span class="font-metric-sm text-secondary" id="dossier-evidence-count">3 Files Attached</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-outline">Cryptographic Hash:</span>
+<span class="font-metric-sm text-tertiary">SHA-256: 8f9b2...4a1e</span>
+</div>
+</div>
+<button class="bg-tertiary text-on-tertiary font-headline-sm py-space-md rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-space-sm" onclick="generateDossier()">
+<span class="material-symbols-outlined text-[18px]">print</span> Generate & Export Dispute Report
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-Side Simulation & Interactive Logic -->
+<script>
+    // Live UTC Clock
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById('utc-clock').innerText = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+    }, 1000);
+
+    // Mock Lookup Action
+    function executeLookup() {
+      const input = document.getElementById('lookup-input').value.trim();
+      const resContainer = document.getElementById('lookup-result');
+      const dossierRef = document.getElementById('dossier-target-ref');
+      
+      if(!input) {
+        alert('Please enter a valid Consumer ID or Meter Serial number.');
+        return;
+      }
+
+      resContainer.classList.remove('hidden');
+      document.getElementById('res-consumer-name').innerText = `Target Account (${input.toUpperCase()})`;
+      document.getElementById('res-meter').innerText = `MTR-${Math.floor(100000 + Math.random() * 900000)}`;
+      dossierRef.innerText = `${input.toUpperCase()} (Ready)`;
+      
+      // Flash feedback
+      resContainer.classList.add('bg-surface-container-high');
+      setTimeout(() => resContainer.classList.remove('bg-surface-container-high'), 400);
+    }
+
+    // Mock Barcode Scan
+    function simulateBarcodeScan() {
+      const randomBarcode = 'SL-' + Math.floor(10000000 + Math.random() * 90000000);
+      document.getElementById('seal-barcode').value = randomBarcode;
+    }
+
+    // Evidence File Handler Simulation
+    let attachedFilesCount = 3;
+    function handleFileSelect(event) {
+      const files = event.target.files;
+      const container = document.getElementById('evidence-preview-container');
+      
+      if (files.length > 0) {
+        if(container.querySelector('italic')) {
+          container.innerHTML = '';
+        }
+        
+        for (let i = 0; i < files.length; i++) {
+          attachedFilesCount++;
+          const file = files[i];
+          const item = document.createElement('div');
+          item.className = 'bg-surface p-space-sm rounded-lg flex items-center justify-between text-body-sm';
+          item.innerHTML = `
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-secondary text-[16px]">image</span>
+              <span class="text-on-surface truncate max-w-[200px]">${file.name}</span>
+            </div>
+            <div class="flex items-center gap-space-md">
+              <span class="text-label-sm text-outline font-metric-sm">GPS Tagged • UTC Stamped</span>
+              <span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+            </div>
+          `;
+          container.appendChild(item);
+        }
+        document.getElementById('dossier-evidence-count').innerText = `${attachedFilesCount} Files Attached`;
+      }
+    }
+
+    // Form Submission Handler
+    function submitInspection(e) {
+      e.preventDefault();
+      const outcome = document.getElementById('outcome-select').value;
+      const reading = document.getElementById('meter-reading').value;
+      const current = document.getElementById('line-current').value;
+
+      if(!outcome) {
+        alert('Please select an inspection outcome.');
+        return;
+      }
+
+      // Simulate API POST /field/inspections/submit
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">sync</span> Transmitting payload...`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">done</span> Transmitted Successfully`;
+        btn.classList.remove('bg-secondary', 'hover:bg-secondary-container');
+        btn.classList.add('bg-primary', 'text-on-primary');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          btn.classList.remove('bg-primary', 'text-on-primary');
+          btn.classList.add('bg-secondary', 'text-on-secondary');
+          document.getElementById('inspection-form').reset();
+        }, 2500);
+      }, 1200);
+    }
+
+    // Dossier Generation Handler
+    function generateDossier() {
+      const targetRef = document.getElementById('dossier-target-ref').innerText;
+      if(targetRef.includes('Pending')) {
+        alert('Please perform an Inspection Verification Lookup before generating the legal dossier.');
+        return;
+      }
+
+      // Simulate GET /field/dispute-dossier/{consumer_id}
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">sync</span> Compiling Dispute Dossier Package...`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">task_alt</span> Dossier PDF Exported Successfully`;
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }, 3000);
+      }, 1800);
+    }
+  </script>
+</div></main></div></body></html>

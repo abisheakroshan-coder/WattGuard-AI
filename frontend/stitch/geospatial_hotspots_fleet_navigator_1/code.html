@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">GridCockpit</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prioritized-inspection-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Inspection Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-explainability-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Diagnostic Studio</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="field-inspector-mobile-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Mobile Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">System Nominal</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="material-symbols-outlined text-primary text-metric-sm">map</span>
+<span class="text-label-md text-primary uppercase font-metric-md">Geospatial Intelligence Engine</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Fleet Navigator & Hotspot Clusters</h1>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center bg-surface-container rounded-lg p-space-xs">
+<button class="px-space-md py-space-sm bg-primary text-on-primary rounded-md text-label-md uppercase transition-colors" id="view-mode-clusters" onclick="switchMapView('clusters')">DBSCAN Zones</button>
+<button class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface rounded-md text-label-md uppercase transition-colors" id="view-mode-pins" onclick="switchMapView('pins')">Active Anomalies</button>
+</div>
+<button class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container-high text-on-surface rounded-lg font-headline-sm hover:bg-surface-bright transition-colors" onclick="triggerGlobalScan()">
+<span class="material-symbols-outlined text-[18px]">radar</span>Refresh Grid
+      </button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-gutter w-full">
+<div class="col-span-12 lg:col-span-8 flex flex-col space-y-gutter">
+<div class="relative w-full h-[640px] rounded-xl overflow-hidden bg-surface-container-lowest flex flex-col shadow-xl">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-luminosity" data-alt="High-tech dark vector geospatial map canvas rendering power grid nodes, substation topologies, glowing red and yellow anomaly markers, and translucent DBSCAN cluster density circles over a dark cartographic terrain." data-location="Sector 7 Industrial Grid, Metro Substation North" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/40 pointer-events-none"></div>
+<div class="absolute top-space-xl left-space-xl z-10 flex flex-wrap gap-space-sm">
+<div class="px-space-md py-space-sm bg-surface/90 backdrop-blur-md rounded-lg flex items-center gap-space-sm shadow-md">
+<span class="w-3 h-3 rounded-full bg-error animate-ping"></span>
+<span class="text-body-sm font-metric-md text-on-surface">14 Critical Clusters Active</span>
+</div>
+<div class="px-space-md py-space-sm bg-surface/90 backdrop-blur-md rounded-lg flex items-center gap-space-sm shadow-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+<span class="text-body-sm font-metric-md text-on-surface">482.4 MWh Unbilled Potential</span>
+</div>
+</div>
+<div class="absolute top-space-xl right-space-xl z-10 flex flex-col gap-space-sm">
+<button class="w-10 h-10 bg-surface/90 backdrop-blur-md rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors shadow-md" onclick="zoomMap('in')">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-10 h-10 bg-surface/90 backdrop-blur-md rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors shadow-md" onclick="zoomMap('out')">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface/90 backdrop-blur-md rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors shadow-md" onclick="resetMap()">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+<div class="absolute top-1/3 left-1/4 z-20 group cursor-pointer" onclick="openMarkerPopup('M-9042', 'Industrial Sector 7B', '98.4% Confidence', '34.2 MWh', 'High Bypass Suspected')">
+<div class="w-8 h-8 rounded-full bg-error/20 flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 rounded-full bg-error flex items-center justify-center text-on-error">
+<span class="material-symbols-outlined text-[10px]">priority_high</span>
+</div>
+</div>
+<div class="absolute left-10 top-0 hidden group-hover:flex flex-col bg-surface-container p-space-md rounded-xl shadow-2xl w-64 z-30">
+<span class="text-label-md text-error uppercase font-metric-md">Anomaly #M-9042</span>
+<span class="text-headline-sm text-on-surface">Sector 7B Transformer</span>
+<span class="text-body-sm text-on-surface-variant mt-space-xs">Unbilled: 34.2 MWh | Conf: 98.4%</span>
+<span class="text-label-sm text-primary mt-space-sm">Click to select for dispatch</span>
+</div>
+</div>
+<div class="absolute top-1/2 left-2/3 z-20 group cursor-pointer" onclick="openMarkerPopup('M-1120', 'Commercial Hub North', '92.1% Confidence', '18.9 MWh', 'Meter Tampering / Phase Reversal')">
+<div class="w-8 h-8 rounded-full bg-tertiary/20 flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[10px]">bolt</span>
+</div>
+</div>
+<div class="absolute left-10 top-0 hidden group-hover:flex flex-col bg-surface-container p-space-md rounded-xl shadow-2xl w-64 z-30">
+<span class="text-label-md text-tertiary uppercase font-metric-md">Anomaly #M-1120</span>
+<span class="text-headline-sm text-on-surface">Commercial Hub North</span>
+<span class="text-body-sm text-on-surface-variant mt-space-xs">Unbilled: 18.9 MWh | Conf: 92.1%</span>
+<span class="text-label-sm text-primary mt-space-sm">Click to select for dispatch</span>
+</div>
+</div>
+<div class="absolute bottom-space-xl left-space-xl right-space-xl z-10 bg-surface/90 backdrop-blur-xl p-space-lg rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md shadow-2xl" id="marker-popup-card">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-error/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="text-label-md text-error uppercase font-metric-md" id="popup-id">ANOMALY #M-9042 SELECTED</span>
+<span class="px-space-sm py-space-xs bg-surface-container rounded text-label-sm text-on-surface-variant">DBSCAN Zone A-4</span>
+</div>
+<h3 class="font-headline-sm text-on-surface" id="popup-title">Industrial Sector 7B Substation</h3>
+<p class="text-body-sm text-on-surface-variant" id="popup-desc">Estimated unbilled loss: 34.2 MWh ($42,100 projected recovery)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<button class="w-full md:w-auto px-space-xl py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors shadow-md" onclick="addSelectedToRoute()">Add to Active Route</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase font-metric-md">Cluster Zone A-1</span>
+<span class="px-space-sm py-space-xs bg-error/10 text-error rounded text-label-sm font-metric-md">Critical Density</span>
+</div>
+<div>
+<span class="font-metric-lg text-metric-lg text-on-surface">142.8 MWh</span>
+<p class="text-body-sm text-on-surface-variant mt-space-xs">Radius: 2.4 km | 38 Consumers</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center justify-between">
+<span class="text-label-sm text-secondary">DBSCAN Epsilon: 0.05</span>
+<button class="text-label-md text-primary hover:underline" onclick="focusCluster('A1')">Focus Zone</button>
+</div>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase font-metric-md">Cluster Zone B-4</span>
+<span class="px-space-sm py-space-xs bg-tertiary/10 text-tertiary rounded text-label-sm font-metric-md">Elevated Risk</span>
+</div>
+<div>
+<span class="font-metric-lg text-metric-lg text-on-surface">89.5 MWh</span>
+<p class="text-body-sm text-on-surface-variant mt-space-xs">Radius: 1.8 km | 21 Consumers</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center justify-between">
+<span class="text-label-sm text-secondary">DBSCAN Epsilon: 0.04</span>
+<button class="text-label-md text-primary hover:underline" onclick="focusCluster('B4')">Focus Zone</button>
+</div>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase font-metric-md">Cluster Zone C-9</span>
+<span class="px-space-sm py-space-xs bg-secondary/10 text-secondary rounded text-label-sm font-metric-md">Moderate Density</span>
+</div>
+<div>
+<span class="font-metric-lg text-metric-lg text-on-surface">54.1 MWh</span>
+<p class="text-body-sm text-on-surface-variant mt-space-xs">Radius: 3.1 km | 15 Consumers</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center justify-between">
+<span class="text-label-sm text-secondary">DBSCAN Epsilon: 0.08</span>
+<button class="text-label-md text-primary hover:underline" onclick="focusCluster('C9')">Focus Zone</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 flex flex-col space-y-gutter">
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col space-y-space-xl shadow-xl">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-metric-sm">route</span>
+<span class="text-label-md text-secondary uppercase font-metric-md">TSP Route Optimizer</span>
+</div>
+<h2 class="font-headline-md text-on-surface">Fleet Dispatch Configuration</h2>
+</div>
+<div class="space-y-space-md">
+<div class="flex flex-col space-y-space-xs">
+<label class="text-label-md text-on-surface-variant uppercase">Inspector Starting Depot</label>
+<select class="bg-surface-container-low text-on-surface p-space-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary font-body-md" id="start-depot">
+<option value="depot-north">Substation Alpha (North Depot)</option>
+<option value="depot-central">Central Operations Hub</option>
+<option value="depot-east">Metro Grid Station 4</option>
+</select>
+</div>
+<div class="flex flex-col space-y-space-xs">
+<label class="text-label-md text-on-surface-variant uppercase">Selected Consumer / Anomaly IDs</label>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-wrap gap-space-sm min-h-[48px] items-center" id="selected-ids-container">
+<span class="px-space-md py-space-sm bg-primary/20 text-primary rounded-md text-label-sm font-metric-md flex items-center gap-space-sm">
+                M-9042 <button class="material-symbols-outlined text-[14px] hover:text-on-surface" onclick="this.parentElement.remove()">close</button>
+</span>
+<span class="px-space-md py-space-sm bg-primary/20 text-primary rounded-md text-label-sm font-metric-md flex items-center gap-space-sm">
+                M-1120 <button class="material-symbols-outlined text-[14px] hover:text-on-surface" onclick="this.parentElement.remove()">close</button>
+</span>
+<span class="px-space-md py-space-sm bg-primary/20 text-primary rounded-md text-label-sm font-metric-md flex items-center gap-space-sm">
+                M-4401 <button class="material-symbols-outlined text-[14px] hover:text-on-surface" onclick="this.parentElement.remove()">close</button>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col space-y-space-xs">
+<label class="text-label-md text-on-surface-variant uppercase">Max Stops</label>
+<input class="bg-surface-container-low text-on-surface p-space-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary font-body-md" id="max-stops" type="number" value="5"/>
+</div>
+<div class="flex flex-col space-y-space-xs">
+<label class="text-label-md text-on-surface-variant uppercase">Vehicle Profile</label>
+<select class="bg-surface-container-low text-on-surface p-space-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary font-body-md">
+<option>Heavy Inspection Van</option>
+<option>Rapid Response SUV</option>
+<option>Drone Unit Alpha</option>
+</select>
+</div>
+</div>
+<button class="w-full py-space-lg bg-secondary text-on-secondary rounded-lg font-headline-sm hover:bg-secondary-container transition-colors shadow-md flex items-center justify-center gap-space-md" onclick="calculateOptimalRoute()">
+<span class="material-symbols-outlined">bolt</span>Calculate Optimal Route (TSP)
+          </button>
+</div>
+<div class="flex flex-col space-y-space-md pt-space-md border-t border-surface-container-high" id="route-results-container">
+<div class="flex items-center justify-between">
+<span class="text-label-md text-on-surface-variant uppercase font-metric-md">Optimized Waypoint Schedule</span>
+<span class="text-label-md text-secondary font-metric-md" id="route-summary-stats">Total: 42.4 km | 3h 15m</span>
+</div>
+<div class="space-y-space-sm max-h-[300px] overflow-y-auto pr-space-xs" id="waypoint-list">
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">1</div>
+<div>
+<span class="font-headline-sm text-on-surface">M-9042 (Sector 7B)</span>
+<p class="text-body-sm text-on-surface-variant">Segment: 0.0 km (Start Depot)</p>
+</div>
+</div>
+<span class="text-label-md text-tertiary">45 min visit</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">2</div>
+<div>
+<span class="font-headline-sm text-on-surface">M-1120 (Hub North)</span>
+<p class="text-body-sm text-on-surface-variant">Segment: 12.4 km (18 min travel)</p>
+</div>
+</div>
+<span class="text-label-md text-tertiary">30 min visit</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">3</div>
+<div>
+<span class="font-headline-sm text-on-surface">M-4401 (East Feeder)</span>
+<p class="text-body-sm text-on-surface-variant">Segment: 18.2 km (24 min travel)</p>
+</div>
+</div>
+<span class="text-label-md text-tertiary">60 min visit</span>
+</div>
+</div>
+<button class="w-full py-space-md bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors shadow-md flex items-center justify-center gap-space-md mt-space-md" onclick="dispatchTeam()">
+<span class="material-symbols-outlined">send</span>Dispatch Field Unit #4
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function switchMapView(mode) {
+      const clusterBtn = document.getElementById('view-mode-clusters');
+      const pinsBtn = document.getElementById('view-mode-pins');
+      if (mode === 'clusters') {
+        clusterBtn.className = "px-space-md py-space-sm bg-primary text-on-primary rounded-md text-label-md uppercase transition-colors";
+        pinsBtn.className = "px-space-md py-space-sm text-on-surface-variant hover:text-on-surface rounded-md text-label-md uppercase transition-colors";
+      } else {
+        pinsBtn.className = "px-space-md py-space-sm bg-primary text-on-primary rounded-md text-label-md uppercase transition-colors";
+        clusterBtn.className = "px-space-md py-space-sm text-on-surface-variant hover:text-on-surface rounded-md text-label-md uppercase transition-colors";
+      }
+    }
+
+    function openMarkerPopup(id, title, conf, unbilled, desc) {
+      document.getElementById('popup-id').innerText = `ANOMALY #${id} SELECTED`;
+      document.getElementById('popup-title').innerText = title;
+      document.getElementById('popup-desc').innerText = `Estimated unbilled loss: ${unbilled} (${conf}, ${desc})`;
+    }
+
+    function addSelectedToRoute() {
+      const container = document.getElementById('selected-ids-container');
+      const badge = document.createElement('span');
+      badge.className = "px-space-md py-space-sm bg-primary/20 text-primary rounded-md text-label-sm font-metric-md flex items-center gap-space-sm";
+      badge.innerHTML = `M-8831 <button onclick="this.parentElement.remove()" class="material-symbols-outlined text-[14px] hover:text-on-surface">close</button>`;
+      container.appendChild(badge);
+    }
+
+    function calculateOptimalRoute() {
+      const list = document.getElementById('waypoint-list');
+      list.innerHTML = `
+        <div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between animate-pulse">
+          <div class="flex items-center gap-space-md">
+            <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-metric-md text-body-sm">1</div>
+            <div>
+              <span class="font-headline-sm text-on-surface">M-9042 (Sector 7B)</span>
+              <p class="text-body-sm text-on-surface-variant">Segment: 0.0 km | Recalculating TSP...</p>
+            </div>
+          </div>
+          <span class="text-label-md text-secondary">Optimizing</span>
+        </div>
+      `;
+      setTimeout(() => {
+        list.innerHTML = `
+          <div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+            <div class="flex items-center gap-space-md">
+              <div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">1</div>
+              <div>
+                <span class="font-headline-sm text-on-surface">M-9042 (Sector 7B)</span>
+                <p class="text-body-sm text-on-surface-variant">Segment: 0.0 km (Start Depot)</p>
+              </div>
+            </div>
+            <span class="text-label-md text-tertiary">45 min visit</span>
+          </div>
+          <div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+            <div class="flex items-center gap-space-md">
+              <div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">2</div>
+              <div>
+                <span class="font-headline-sm text-on-surface">M-8831 (Industrial West)</span>
+                <p class="text-body-sm text-on-surface-variant">Segment: 8.1 km (11 min travel)</p>
+              </div>
+            </div>
+            <span class="text-label-md text-tertiary">40 min visit</span>
+          </div>
+          <div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+            <div class="flex items-center gap-space-md">
+              <div class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-metric-md text-body-sm">3</div>
+              <div>
+                <span class="font-headline-sm text-on-surface">M-1120 (Hub North)</span>
+                <p class="text-body-sm text-on-surface-variant">Segment: 14.5 km (19 min travel)</p>
+              </div>
+            </div>
+            <span class="text-label-md text-tertiary">30 min visit</span>
+          </div>
+        `;
+        document.getElementById('route-summary-stats').innerText = "Total: 31.2 km | 2h 45m";
+      }, 600);
+    }
+
+    function dispatchTeam() {
+      alert("Field Unit #4 dispatched successfully with encrypted TSP manifest route.");
+    }
+
+    function zoomMap(dir) {
+      console.log('Zooming map:', dir);
+    }
+
+    function resetMap() {
+      console.log('Resetting map viewport');
+    }
+
+    function triggerGlobalScan() {
+      console.log('Refreshing geospatial grid nodes...');
+    }
+
+    function focusCluster(zone) {
+      console.log('Focusing cluster zone:', zone);
+    }
+  </script>
+</div></main></div></body></html>
