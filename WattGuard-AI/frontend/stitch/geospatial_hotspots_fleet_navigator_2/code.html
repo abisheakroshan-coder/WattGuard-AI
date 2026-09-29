@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#0a0e18", "surface-dim": "#0f131d", "primary-container": "#4d8eff", "on-secondary-container": "#00311f", "background": "#0f131d", "primary": "#adc6ff", "on-surface-variant": "#c2c6d6", "outline": "#8c909f", "surface-container-high": "#262a35", "secondary-container": "#00a572", "secondary-fixed": "#6ffbbe", "on-secondary": "#003824", "surface-container-highest": "#313540", "surface-tint": "#adc6ff", "on-tertiary-container": "#3e2400", "surface-bright": "#353944", "secondary": "#4edea3", "on-background": "#dfe2f1", "on-primary-fixed": "#001a42", "on-tertiary-fixed": "#2a1700", "inverse-primary": "#005ac2", "outline-variant": "#424754", "primary-fixed-dim": "#adc6ff", "on-primary-container": "#00285d", "inverse-on-surface": "#2c303b", "on-surface": "#dfe2f1", "tertiary-fixed-dim": "#ffb95f", "error": "#ffb4ab", "surface-container-low": "#171b26", "on-error": "#690005", "surface-container": "#1c1f2a", "secondary-fixed-dim": "#4edea3", "error-container": "#93000a", "on-primary-fixed-variant": "#004395", "tertiary-fixed": "#ffddb8", "on-primary": "#002e6a", "tertiary-container": "#ca8100", "on-secondary-fixed-variant": "#005236", "on-secondary-fixed": "#002113", "on-tertiary": "#472a00", "surface-variant": "#313540", "inverse-surface": "#dfe2f1", "surface": "#0f131d", "on-error-container": "#ffdad6", "primary-fixed": "#d8e2ff", "tertiary": "#ffb95f"},"borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},"spacing": {"gutter": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "space-lg": "1rem", "space-sm": "0.25rem", "space-xs": "0.125rem", "space-md": "0.5rem"},"fontFamily": {"metric-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "metric-md": ["JetBrains Mono"], "body-md": ["Inter"], "label-sm": ["JetBrains Mono"]},"fontSize": {"metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}]}}}};</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-8 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">bolt</span></div><div class="flex flex-col"><span class="font-headline-sm text-on-surface tracking-wider uppercase">WATTGUARD</span><span class="font-label-sm text-primary">AI ENTERPRISE</span></div></div><nav class="flex-1 px-4 space-y-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">grid_view</span>Executive Grid</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">priority_high</span>Priority Manifest</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">monitoring</span>Diagnostic Studio</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="geospatial-hotspots-and-fleet-navigator" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">map</span>Geospatial Fleet</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">engineering</span>Field Portal</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="model-governance-and-active-learning" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">psychology</span>Model Governance</a></nav><div class="px-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div><span class="font-label-sm text-on-surface-variant">SYSTEM NOMINAL</span></div><span class="font-metric-sm text-on-surface-variant">v4.8</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-6"><div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-secondary text-[18px]">shield</span><span class="font-metric-sm text-on-surface">GRID SECURE</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[16px]">schedule</span><span>UTC 14:22:08</span></div></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen p-space-xl"><div class="flex flex-col w-full pb-16">
+<!-- Top Banner / Header Context -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-space-xl">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-secondary bg-secondary/10 px-2.5 py-0.5 rounded">GEOSPATIAL INTEL v4.2</span>
+<span class="font-label-sm text-on-surface-variant">DBSCAN CLUSTERING: ACTIVE</span>
+</div>
+<h1 class="font-headline-lg text-on-surface">Fleet Navigator &amp; Hotspot Density Engine</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container-low px-3 py-2 rounded-xl">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">radar</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant">Active Scan Radius</span>
+<span class="font-metric-sm text-on-surface">45.8 km²</span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container-low px-3 py-2 rounded-xl">
+<span class="material-symbols-outlined text-secondary text-[20px] mr-2">crisis_alert</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant">Anomalies Tracked</span>
+<span class="font-metric-sm text-secondary">28 Clusters</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary-container font-headline-sm text-body-lg px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 shadow-sm" onclick="toggleLayerMenu()">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+<span>Layer Toggles</span>
+</button>
+</div>
+</div>
+<!-- Main Grid Layout: Map Viewport (Left/Center) + Fleet Dispatch & TSP Optimizer (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-24 gap-gutter items-start">
+<!-- Map Viewport Canvas Section (16 Cols) -->
+<div class="lg:col-span-16 flex flex-col gap-gutter">
+<!-- Interactive Map Simulation Canvas -->
+<div class="relative w-full h-[640px] bg-surface-container-low rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between p-4" data-location="Metropolitan Grid Sector 7" style="">
+<!-- Simulated Map Background -->
+<div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-luminosity filter contrast-125" data-alt="High-contrast dark-mode satellite map of an industrial metropolitan grid showing dark asphalt terrain, faint glowing electric grid vector lines, bright cyan substation nodes, and red-to-yellow thermal density hotspot circles over urban sectors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMUvJqvB1nrhmSgCm7RSP-gD-iAVpv-z-mAdQMHI6m3u-YGwLd9_XpSllH_xB83BjVI_JjF1czG22hW0wY2Y8pvOqqqA7UmI4KC23dMJ-SwiBjF4Z66QsxUGajbLFm-X5pOhQpE0rntvbJSA4W_RRVsqqmGldVK0smMpIjVJoby-jRPQUM6_NOhDlDdCV0aZU5NwXlFZ4jhpAuUigDgMj38dZh6sS27kmy-dJIBH_00bQHP7SQUcwt')"></div>
+<!-- Subtle Vector Grid Overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(#adc6ff_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none"></div>
+<!-- Map Top Control Bar -->
+<div class="relative z-10 flex items-center justify-between bg-surface/80 backdrop-blur-md px-4 py-3 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-error animate-pulse"></span>
+<span class="font-headline-sm text-on-surface text-sm">Live Telemetry Canvas</span>
+<span class="font-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded">EPS=0.04 DBSCAN</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" onclick="zoomMap(1)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center transition-colors" onclick="zoomMap(-1)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary font-label-sm transition-colors" onclick="resetMapView()">
+              RESET
+            </button>
+</div>
+</div>
+<!-- Interactive Map Pins & Hotspot Density Overlay Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none transition-transform duration-300" id="map-canvas-viewport">
+<!-- DBSCAN Theft Hotspot Density Circle 1 (High Severity) -->
+<div class="absolute top-[28%] left-[35%] w-64 h-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-error/20 border border-error/50 pointer-events-auto cursor-pointer animate-pulse flex items-center justify-center group" onclick="selectHotspot('Cluster A - Industrial Sector 4', 'High Theft Probability', '14.2 MWh/day estimated loss')">
+<div class="w-32 h-32 rounded-full bg-error/30 flex items-center justify-center">
+<span class="font-label-sm text-error bg-surface px-2 py-1 rounded shadow">CRITICAL CLUSTER (99.4%)</span>
+</div>
+</div>
+<!-- DBSCAN Theft Hotspot Density Circle 2 (Medium Severity) -->
+<div class="absolute top-[60%] left-[65%] w-48 h-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-tertiary/15 border border-tertiary/40 pointer-events-auto cursor-pointer flex items-center justify-center" onclick="selectHotspot('Cluster B - Commercial District', 'Moderate Irregularity', '4.8 MWh/day estimated loss')">
+<div class="w-20 h-20 rounded-full bg-tertiary/25 flex items-center justify-center">
+<span class="font-label-sm text-tertiary bg-surface px-1.5 py-0.5 rounded shadow">MODERATE (78.1%)</span>
+</div>
+</div>
+<!-- Anomaly Marker Pin 1 -->
+<div class="absolute top-[32%] left-[40%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto group cursor-pointer" onclick="selectPin('Meter #9021-TX', 'Zero-Load Bypass Detected', 'Risk Score: 94.2')">
+<div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-error text-on-error shadow-lg transition-transform hover:scale-125">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span class="absolute -top-8 bg-surface text-on-surface font-label-sm px-2 py-0.5 rounded shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Meter #9021-TX</span>
+</div>
+</div>
+<!-- Anomaly Marker Pin 2 -->
+<div class="absolute top-[25%] left-[28%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto group cursor-pointer" onclick="selectPin('Substation #44-B', 'Phase Imbalance Anomaly', 'Risk Score: 88.5')">
+<div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-error text-on-error shadow-lg transition-transform hover:scale-125">
+<span class="material-symbols-outlined text-[20px]">flash_on</span>
+<span class="absolute -top-8 bg-surface text-on-surface font-label-sm px-2 py-0.5 rounded shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Substation #44-B</span>
+</div>
+</div>
+<!-- Anomaly Marker Pin 3 -->
+<div class="absolute top-[55%] left-[60%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto group cursor-pointer" onclick="selectPin('Transformer #12-C', 'Thermal Overload Warning', 'Risk Score: 82.0')">
+<div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-tertiary text-on-tertiary shadow-lg transition-transform hover:scale-125">
+<span class="material-symbols-outlined text-[20px]">electric_meter</span>
+<span class="absolute -top-8 bg-surface text-on-surface font-label-sm px-2 py-0.5 rounded shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Transformer #12-C</span>
+</div>
+</div>
+<!-- Fleet Dispatch Unit Marker (Active Truck) -->
+<div class="absolute top-[45%] left-[48%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto group cursor-pointer animate-bounce">
+<div class="relative flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-on-secondary shadow-lg">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="absolute -bottom-8 bg-surface text-secondary font-label-sm px-2 py-0.5 rounded shadow-md whitespace-nowrap">Unit Alpha-1</span>
+</div>
+</div>
+</div>
+<!-- Map Bottom Legend & Selected Pin Detail Drawer -->
+<div class="relative z-10 bg-surface/90 backdrop-blur-md p-4 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex flex-col" id="map-inspector-info">
+<span class="font-label-sm text-primary">SECTOR INSPECTOR STATUS</span>
+<span class="font-headline-sm text-on-surface text-sm">Click any map pin or DBSCAN circle for direct telemetry diagnostics.</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-sm text-on-surface-variant"><span class="w-3 h-3 rounded-full bg-error"></span> Critical Theft</div>
+<div class="flex items-center gap-1.5 font-label-sm text-on-surface-variant"><span class="w-3 h-3 rounded-full bg-tertiary"></span> Moderate Risk</div>
+<div class="flex items-center gap-1.5 font-label-sm text-on-surface-variant"><span class="w-3 h-3 rounded-full bg-secondary"></span> Fleet Unit</div>
+</div>
+</div>
+</div>
+<!-- Quick Telemetry Stats Bar below map -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-error/10 text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant">Estimated Daily Theft</span>
+<h4 class="font-metric-md text-error">42.4 MWh</h4>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">route</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant">Active TSP Routes</span>
+<h4 class="font-metric-md text-on-surface">6 Optimized</h4>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<span class="font-label-sm text-on-surface-variant">Inspection Efficiency</span>
+<h4 class="font-metric-md text-secondary">+38.2%</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Fleet Dispatch & TSP Route Optimizer Panel (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-low p-6 rounded-2xl shadow-xl flex flex-col gap-6">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">navigation</span>
+</div>
+<div>
+<h3 class="font-headline-md text-on-surface">Fleet Dispatch &amp; TSP Optimizer</h3>
+<span class="font-body-sm text-on-surface-variant">Traveling Salesperson Problem (TSP) heuristic solver</span>
+</div>
+</div>
+<span class="font-label-sm text-secondary bg-secondary/10 px-2.5 py-1 rounded">SOLVER READY</span>
+</div>
+<!-- Starting Coordinates Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-on-surface-variant">STARTING COORDINATES (DEPOT / HANGAR)</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-on-surface-variant font-label-sm">LAT</span>
+<input class="w-full bg-surface text-on-surface font-metric-sm pl-12 pr-3 py-2.5 rounded-xl border border-outline-variant/40 focus:border-primary outline-none transition-colors" type="text" value="37.7749° N"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-on-surface-variant font-label-sm">LON</span>
+<input class="w-full bg-surface text-on-surface font-metric-sm pl-12 pr-3 py-2.5 rounded-xl border border-outline-variant/40 focus:border-primary outline-none transition-colors" type="text" value="122.4194° W"/>
+</div>
+</div>
+</div>
+<!-- Selected Consumer List (Interactive Checkboxes) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-on-surface-variant">SELECTED HIGH-RISK TARGETS (4 QUEUED)</label>
+<span class="font-label-sm text-primary cursor-pointer hover:underline" onclick="toggleAllTargets()">Select All</span>
+</div>
+<div class="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1">
+<!-- Target Item 1 -->
+<label class="flex items-center justify-between bg-surface p-3 rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Meter #9021-TX</span>
+<p class="font-body-sm text-on-surface-variant">Industrial Bypass • Risk: 94.2</p>
+</div>
+</div>
+<span class="font-label-sm text-error bg-error/10 px-2 py-0.5 rounded">Priority 1</span>
+</label>
+<!-- Target Item 2 -->
+<label class="flex items-center justify-between bg-surface p-3 rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Substation #44-B</span>
+<p class="font-body-sm text-on-surface-variant">Phase Imbalance • Risk: 88.5</p>
+</div>
+</div>
+<span class="font-label-sm text-error bg-error/10 px-2 py-0.5 rounded">Priority 2</span>
+</label>
+<!-- Target Item 3 -->
+<label class="flex items-center justify-between bg-surface p-3 rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Transformer #12-C</span>
+<p class="font-body-sm text-on-surface-variant">Thermal Overload • Risk: 82.0</p>
+</div>
+</div>
+<span class="font-label-sm text-tertiary bg-tertiary/10 px-2 py-0.5 rounded">Priority 3</span>
+</label>
+<!-- Target Item 4 -->
+<label class="flex items-center justify-between bg-surface p-3 rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Meter #1104-AZ</span>
+<p class="font-body-sm text-on-surface-variant">Tamper Alert • Risk: 79.4</p>
+</div>
+</div>
+<span class="font-label-sm text-tertiary bg-tertiary/10 px-2 py-0.5 rounded">Priority 4</span>
+</label>
+</div>
+</div>
+<!-- Calculate Optimal Route Action Button -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary-container font-headline-sm py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer" id="calc-route-btn" onclick="calculateOptimalRoute()">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Calculate Optimal Route (TSP Solver)</span>
+</button>
+<!-- Ordered Waypoint Schedule (Stop 1 to N) -->
+<div class="flex flex-col gap-3 pt-2 border-t border-outline-variant/30" id="waypoint-schedule-container">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">ORDERED WAYPOINT SCHEDULE (TSP RESULT)</span>
+<span class="font-metric-sm text-secondary" id="route-summary-stats">Total: 18.4 km • 42 min</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Waypoint 1 -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-xl border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-metric-sm text-xs">1</div>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Substation #44-B</span>
+<span class="font-body-sm text-on-surface-variant block">Segment: 3.2 km • 8 mins est.</span>
+</div>
+</div>
+<span class="font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded">STOP 01</span>
+</div>
+<!-- Waypoint 2 -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-xl border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-metric-sm text-xs">2</div>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Meter #9021-TX</span>
+<span class="font-body-sm text-on-surface-variant block">Segment: 4.8 km • 11 mins est.</span>
+</div>
+</div>
+<span class="font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded">STOP 02</span>
+</div>
+<!-- Waypoint 3 -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-xl border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-metric-sm text-xs">3</div>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Transformer #12-C</span>
+<span class="font-body-sm text-on-surface-variant block">Segment: 6.1 km • 14 mins est.</span>
+</div>
+</div>
+<span class="font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded">STOP 03</span>
+</div>
+<!-- Waypoint 4 -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-xl border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-metric-sm text-xs">4</div>
+<div>
+<span class="font-headline-sm text-on-surface text-sm">Meter #1104-AZ</span>
+<span class="font-body-sm text-on-surface-variant block">Segment: 4.3 km • 9 mins est.</span>
+</div>
+</div>
+<span class="font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded">STOP 04</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Script for Map & TSP Simulations -->
+<script>
+    let currentZoom = 1;
+
+    function zoomMap(direction) {
+      currentZoom += direction * 0.15;
+      if (currentZoom < 0.8) currentZoom = 0.8;
+      if (currentZoom > 1.8) currentZoom = 1.8;
+      const viewport = document.getElementById('map-canvas-viewport');
+      if(viewport) {
+        viewport.style.transform = `scale(${currentZoom})`;
+      }
+    }
+
+    function resetMapView() {
+      currentZoom = 1;
+      const viewport = document.getElementById('map-canvas-viewport');
+      if(viewport) {
+        viewport.style.transform = `scale(1)`;
+      }
+      document.getElementById('map-inspector-info').innerHTML = `
+        <span class="font-label-sm text-primary">SECTOR INSPECTOR STATUS</span>
+        <span class="font-headline-sm text-on-surface text-sm">Map viewport reset to default sector center.</span>
+      `;
+    }
+
+    function selectHotspot(name, type, loss) {
+      document.getElementById('map-inspector-info').innerHTML = `
+        <span class="font-label-sm text-error">DBSCAN CLUSTER SELECTED</span>
+        <span class="font-headline-sm text-on-surface text-sm">${name}: ${type} (${loss})</span>
+      `;
+    }
+
+    function selectPin(target, issue, score) {
+      document.getElementById('map-inspector-info').innerHTML = `
+        <span class="font-label-sm text-secondary">CONSUMER NODE DIAGNOSTIC</span>
+        <span class="font-headline-sm text-on-surface text-sm">${target} — ${issue} | ${score}</span>
+      `;
+    }
+
+    function calculateOptimalRoute() {
+      const btn = document.getElementById('calc-route-btn');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Solving Heuristic TSP...</span>`;
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span><span>Optimal TSP Route Dispatched</span>`;
+        setTimeout(() => {
+          btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">bolt</span><span>Calculate Optimal Route (TSP Solver)</span>`;
+        }, 2000);
+      }, 1000);
+    }
+
+    function toggleAllTargets() {
+      const checkboxes = document.querySelectorAll('#waypoint-schedule-container ~ div input[type="checkbox"]');
+      checkboxes.forEach(cb => cb.checked = !cb.checked);
+    }
+  </script>
+</div></main></div></body></html>

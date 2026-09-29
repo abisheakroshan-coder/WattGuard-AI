@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">⚡ WATTGUARD AI</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Grid Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Smart Priority Manifest</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Consumer Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Geospatial Hotspots &amp; Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Inspector Field Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance &amp; Active Learning</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">Zone: North Substation 04</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<!-- Page Header Intro -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="font-label-md text-primary uppercase tracking-wider">Telemetry Command &amp; Control</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-md text-on-surface-variant">SCADA Node #04-ALPHA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Executive Grid Overview</h1>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-body-sm text-on-surface font-medium">Defense Grid Active</span>
+</div>
+<div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">update</span>
+<span class="font-metric-sm text-on-surface-variant">Live Sync: 120ms</span>
+</div>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-label-md text-on-surface-variant uppercase">Total Smart Meters</span>
+<span class="p-space-sm bg-primary/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">electric_meter</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-on-surface tracking-tight">142,890</div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="font-body-sm text-secondary font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span> +2.4%
+          </span>
+<span class="font-body-sm text-on-surface-variant">vs last billing cycle</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-error/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-label-md text-on-surface-variant uppercase">Flagged Anomalies</span>
+<span class="p-space-sm bg-error/10 text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-on-surface tracking-tight">1,284</div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="font-body-sm text-error font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span> +12.8%
+          </span>
+<span class="font-body-sm text-on-surface-variant">critical threshold exceeded</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-tertiary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-label-md text-on-surface-variant uppercase">Est. Unbilled Energy</span>
+<span class="p-space-sm bg-tertiary/10 text-tertiary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-on-surface tracking-tight">842.6 <span class="text-body-lg text-tertiary font-semibold">MWh</span></div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="font-body-sm text-tertiary font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">priority_high</span> High Loss Zone
+          </span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col justify-between relative overflow-hidden transition-all duration-200 hover:bg-surface-container-high">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-secondary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-lg">
+<span class="font-label-md text-on-surface-variant uppercase">Recoverable Revenue</span>
+<span class="p-space-sm bg-secondary/10 text-secondary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-on-surface tracking-tight">$1.42M</div>
+<div class="flex items-center gap-space-sm mt-space-sm">
+<span class="font-body-sm text-secondary font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">check_circle</span> 94.2% AI Confidence
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-xl">
+<!-- Left 2 Cols: Vulnerable Feeder Ranking Table -->
+<div class="lg:col-span-2 bg-surface-container rounded-xl p-space-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xl">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Vulnerable Feeder Ranking</h2>
+<p class="font-body-sm text-on-surface-variant mt-0.5">Real-time analysis powered by GET /geospatial/feeder-vulnerability</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-lg font-body-sm transition-colors flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter
+          </button>
+<button class="px-space-md py-space-sm bg-surface-container-high hover:bg-surface-bright text-on-surface rounded-lg font-body-sm transition-colors flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px]">download</span> Export
+          </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md uppercase tracking-wider">
+<th class="p-space-md rounded-l-lg">Feeder ID</th>
+<th class="p-space-md">Substation Phase</th>
+<th class="p-space-md text-right">Phase Imbalance %</th>
+<th class="p-space-md text-right">Residual Loss (kWh)</th>
+<th class="p-space-md rounded-r-lg text-right">Vulnerability Index</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface divide-y-0 space-y-space-sm">
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="p-space-md font-metric-sm text-primary rounded-l-lg">FDR-8802-NX</td>
+<td class="p-space-md">Phase A (North)</td>
+<td class="p-space-md text-right font-metric-sm text-error">18.4%</td>
+<td class="p-space-md text-right font-metric-sm">12,450</td>
+<td class="p-space-md text-right rounded-r-lg">
+<span class="px-space-sm py-space-xs bg-error/10 text-error font-metric-sm rounded">0.94 CRITICAL</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="p-space-md font-metric-sm text-primary rounded-l-lg">FDR-4109-ST</td>
+<td class="p-space-md">Phase C (Central)</td>
+<td class="p-space-md text-right font-metric-sm text-tertiary">14.1%</td>
+<td class="p-space-md text-right font-metric-sm">9,820</td>
+<td class="p-space-md text-right rounded-r-lg">
+<span class="px-space-sm py-space-xs bg-tertiary/10 text-tertiary font-metric-sm rounded">0.82 HIGH</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="p-space-md font-metric-sm text-primary rounded-l-lg">FDR-1092-WE</td>
+<td class="p-space-md">Phase B (West)</td>
+<td class="p-space-md text-right font-metric-sm text-tertiary">11.9%</td>
+<td class="p-space-md text-right font-metric-sm">7,410</td>
+<td class="p-space-md text-right rounded-r-lg">
+<span class="px-space-sm py-space-xs bg-tertiary/10 text-tertiary font-metric-sm rounded">0.76 HIGH</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="p-space-md font-metric-sm text-primary rounded-l-lg">FDR-6632-EA</td>
+<td class="p-space-md">Phase A (East)</td>
+<td class="p-space-md text-right font-metric-sm text-secondary">6.2%</td>
+<td class="p-space-md text-right font-metric-sm">3,120</td>
+<td class="p-space-md text-right rounded-r-lg">
+<span class="px-space-sm py-space-xs bg-secondary/10 text-secondary font-metric-sm rounded">0.41 MODERATE</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="p-space-md font-metric-sm text-primary rounded-l-lg">FDR-3041-SO</td>
+<td class="p-space-md">Phase C (South)</td>
+<td class="p-space-md text-right font-metric-sm text-secondary">4.1%</td>
+<td class="p-space-md text-right font-metric-sm">1,850</td>
+<td class="p-space-md text-right rounded-r-lg">
+<span class="px-space-sm py-space-xs bg-secondary/10 text-secondary font-metric-sm rounded">0.22 LOW</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between mt-space-xl pt-space-md">
+<span class="font-body-sm text-on-surface-variant">Showing top 5 of 128 active monitored feeders</span>
+<a class="font-headline-sm text-primary hover:underline text-body-sm flex items-center gap-space-xs" href="#">
+          View Complete Feeder Telemetry <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right 1 Col: System Ingestion Status Panel -->
+<div class="bg-surface-container rounded-xl p-space-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">System Ingestion</h2>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-space-xl">
+          Manual dataset synchronization endpoint for local meter telemetry payloads and edge-node reconciliation.
+        </p>
+<!-- Ingestion Status Box -->
+<div class="bg-surface-container-low p-space-lg rounded-xl mb-space-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant">Endpoint</span>
+<span class="font-metric-sm text-primary">POST /system/ingest/dataset</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant">Last Batch ID</span>
+<span class="font-metric-sm text-on-surface">BATCH-9942-AI</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant">Parser Status</span>
+<span class="font-metric-sm text-secondary">READY (0 Queue)</span>
+</div>
+</div>
+<!-- Visual Mini Graph representation -->
+<div class="p-space-lg bg-surface-container-low rounded-xl mb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-md text-on-surface-variant uppercase">Bandwidth / Stream Load</span>
+<span class="font-metric-sm text-secondary">42.8 MB/s</span>
+</div>
+<div class="h-16 flex items-end gap-1">
+<div class="w-1/12 bg-primary/20 h-[40%] rounded-t"></div>
+<div class="w-1/12 bg-primary/40 h-[60%] rounded-t"></div>
+<div class="w-1/12 bg-primary/30 h-[50%] rounded-t"></div>
+<div class="w-1/12 bg-primary/60 h-[75%] rounded-t"></div>
+<div class="w-1/12 bg-primary/80 h-[90%] rounded-t"></div>
+<div class="w-1/12 bg-primary h-[100%] rounded-t"></div>
+<div class="w-1/12 bg-secondary h-[85%] rounded-t"></div>
+<div class="w-1/12 bg-secondary/80 h-[65%] rounded-t"></div>
+<div class="w-1/12 bg-primary/60 h-[55%] rounded-t"></div>
+<div class="w-1/12 bg-primary/40 h-[45%] rounded-t"></div>
+<div class="w-1/12 bg-primary/30 h-[60%] rounded-t"></div>
+<div class="w-1/12 bg-primary/50 h-[70%] rounded-t"></div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col gap-space-md">
+<button class="w-full py-space-md bg-primary hover:bg-primary-container text-on-primary rounded-lg font-headline-sm transition-colors flex items-center justify-center gap-space-sm cursor-pointer shadow-md" id="ingest-btn" onclick="triggerIngest()">
+<span class="material-symbols-outlined text-[18px]" id="ingest-icon">upload_file</span>
+<span id="ingest-text">Ingest Local Meter Data</span>
+</button>
+<!-- Toast Feedback (Hidden by Default) -->
+<div class="hidden p-space-md bg-secondary/10 text-secondary rounded-lg font-body-sm flex items-center gap-space-sm transition-all duration-300" id="ingest-toast">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="toast-message">Dataset successfully ingested via POST /system/ingest/dataset</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Script for Ingest Interaction -->
+<script>
+    function triggerIngest() {
+      const btn = document.getElementById('ingest-btn');
+      const icon = document.getElementById('ingest-icon');
+      const text = document.getElementById('ingest-text');
+      const toast = document.getElementById('ingest-toast');
+
+      // Set loading state
+      btn.disabled = true;
+      btn.classList.add('opacity-75');
+      icon.classList.add('animate-spin');
+      icon.textContent = 'sync';
+      text.textContent = 'Ingesting Payload...';
+      toast.classList.add('hidden');
+
+      setTimeout(() => {
+        // Reset button
+        btn.disabled = false;
+        btn.classList.remove('opacity-75');
+        icon.classList.remove('animate-spin');
+        icon.textContent = 'upload_file';
+        text.textContent = 'Ingest Local Meter Data';
+
+        // Show toast
+        toast.classList.remove('hidden');
+
+        // Hide toast after 4 seconds
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 4000);
+      }, 1500);
+    }
+  </script>
+</div></main></div></body></html>

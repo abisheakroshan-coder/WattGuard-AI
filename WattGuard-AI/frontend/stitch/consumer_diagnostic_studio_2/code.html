@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#0a0e18", "surface-dim": "#0f131d", "primary-container": "#4d8eff", "on-secondary-container": "#00311f", "background": "#0f131d", "primary": "#adc6ff", "on-surface-variant": "#c2c6d6", "outline": "#8c909f", "surface-container-high": "#262a35", "secondary-container": "#00a572", "secondary-fixed": "#6ffbbe", "on-secondary": "#003824", "surface-container-highest": "#313540", "surface-tint": "#adc6ff", "on-tertiary-container": "#3e2400", "surface-bright": "#353944", "secondary": "#4edea3", "on-background": "#dfe2f1", "on-primary-fixed": "#001a42", "on-tertiary-fixed": "#2a1700", "inverse-primary": "#005ac2", "outline-variant": "#424754", "primary-fixed-dim": "#adc6ff", "on-primary-container": "#00285d", "inverse-on-surface": "#2c303b", "on-surface": "#dfe2f1", "tertiary-fixed-dim": "#ffb95f", "error": "#ffb4ab", "surface-container-low": "#171b26", "on-error": "#690005", "surface-container": "#1c1f2a", "secondary-fixed-dim": "#4edea3", "error-container": "#93000a", "on-primary-fixed-variant": "#004395", "tertiary-fixed": "#ffddb8", "on-primary": "#002e6a", "tertiary-container": "#ca8100", "on-secondary-fixed-variant": "#005236", "on-secondary-fixed": "#002113", "on-tertiary": "#472a00", "surface-variant": "#313540", "inverse-surface": "#dfe2f1", "surface": "#0f131d", "on-error-container": "#ffdad6", "primary-fixed": "#d8e2ff", "tertiary": "#ffb95f"},"borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},"spacing": {"gutter": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "space-lg": "1rem", "space-sm": "0.25rem", "space-xs": "0.125rem", "space-md": "0.5rem"},"fontFamily": {"metric-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "label-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "metric-md": ["JetBrains Mono"], "body-md": ["Inter"], "label-sm": ["JetBrains Mono"]},"fontSize": {"metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}]}}}};</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-8 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">bolt</span></div><div class="flex flex-col"><span class="font-headline-sm text-on-surface tracking-wider uppercase">WATTGUARD</span><span class="font-label-sm text-primary">AI ENTERPRISE</span></div></div><nav class="flex-1 px-4 space-y-1.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">grid_view</span>Executive Grid</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="smart-priority-manifest" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">priority_high</span>Priority Manifest</a><a aria-current="page" class="flex items-center px-4 py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="consumer-diagnostic-studio" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">monitoring</span>Diagnostic Studio</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="geospatial-hotspots-and-fleet-navigator" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">map</span>Geospatial Fleet</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inspector-field-portal" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">engineering</span>Field Portal</a><a class="flex items-center px-4 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="model-governance-and-active-learning" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">psychology</span>Model Governance</a></nav><div class="px-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-secondary"></div><span class="font-label-sm text-on-surface-variant">SYSTEM NOMINAL</span></div><span class="font-metric-sm text-on-surface-variant">v4.8</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-6"><div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg"><span class="material-symbols-outlined text-secondary text-[18px]">shield</span><span class="font-metric-sm text-on-surface">GRID SECURE</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-sm"><span class="material-symbols-outlined text-[16px]">schedule</span><span>UTC 14:22:08</span></div></div><div class="flex items-center gap-4"><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen p-space-xl"><div class="flex flex-col w-full pb-16">
+<!-- Top Bar: Consumer Selector & Quick Status -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-6">
+<div class="relative flex-1 max-w-xl">
+<span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-on-surface-variant material-symbols-outlined text-[20px]">search</span>
+<input class="w-full bg-surface-container text-on-surface pl-11 pr-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary font-body-md transition-all" id="consumerSearch" placeholder="Search Consumer ID, Meter Serial, or Address (e.g., MTR-98214-X)..." type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<span class="text-label-sm bg-surface-container-high px-2 py-1 rounded text-primary">ESC to clear</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-4 py-3 rounded-xl font-headline-sm text-body-md flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+<span>Diagnostic History</span>
+</button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-headline-sm px-5 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Run Deep Scan</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Metadata Summary Banner -->
+<div class="bg-surface-container rounded-xl p-5 mb-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Consumer Address</span>
+<span class="font-headline-sm text-on-surface truncate" title="742 Evergreen Terrace, Sector 4">742 Evergreen Terr.</span>
+<span class="font-body-sm text-secondary mt-1">ID: #C-88492</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Sanctioned Load</span>
+<span class="font-metric-md text-on-surface">15.0 <span class="text-body-sm text-on-surface-variant">kVA</span></span>
+<span class="font-body-sm text-error mt-1">+42% Peak Exceeded</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Tariff Type</span>
+<span class="font-headline-sm text-on-surface">Commercial-3Phase</span>
+<span class="font-body-sm text-on-surface-variant mt-1">HT-Industrial Rate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Meter Serial</span>
+<span class="font-metric-sm text-primary tracking-wider">MTR-98214-X</span>
+<span class="font-body-sm text-secondary mt-1">Firmware v4.12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Transformer ID</span>
+<span class="font-metric-sm text-on-surface tracking-wider">TR-B4-NORTH</span>
+<span class="font-body-sm text-on-surface-variant mt-1">Load: 88% Cap</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase mb-1">Phase Assignment</span>
+<span class="font-headline-sm text-tertiary">Phase R (Red)</span>
+<span class="font-body-sm text-error mt-1">Imbalance: 14.2%</span>
+</div>
+</div>
+<!-- Main Grid: Chart & XAI Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+<!-- Behavioral Baseline vs Actual Consumption Chart -->
+<div class="lg:col-span-8 bg-surface-container rounded-xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-on-surface">Behavioral Baseline vs. Actual Consumption</h2>
+<span class="bg-secondary/10 text-secondary border border-secondary/20 px-2 py-0.5 rounded text-label-sm font-metric-sm">AI CONFIDENCE 98.4%</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">72-hour rolling telemetry window with Bayesian changepoint anomaly detection.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> Baseline Band
+          </div>
+<div class="flex items-center gap-1.5 text-body-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span> Actual Load
+          </div>
+</div>
+</div>
+<!-- SVG Chart Canvas -->
+<div class="relative w-full h-72 flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 800 280">
+<!-- Grid Lines -->
+<line stroke="#262a35" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="40" y2="40"></line>
+<line stroke="#262a35" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="100" y2="100"></line>
+<line stroke="#262a35" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="160" y2="160"></line>
+<line stroke="#262a35" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="800" y1="220" y2="220"></line>
+<!-- Green Ribbon Baseline Confidence Band -->
+<path d="M0,150 Q100,130 200,160 T400,140 T600,120 T800,130 L800,180 Q700,190 600,170 T400,190 T200,180 T0,200 Z" fill="#4edea3" opacity="0.12"></path>
+<path d="M0,150 Q100,130 200,160 T400,140 T600,120 T800,130" fill="none" opacity="0.5" stroke="#4edea3" stroke-dasharray="6 6" stroke-width="1.5"></path>
+<path d="M0,200 Q100,190 200,180 T400,190 T600,170 T800,180" fill="none" opacity="0.5" stroke="#4edea3" stroke-dasharray="6 6" stroke-width="1.5"></path>
+<!-- Bayesian Changepoint Markers -->
+<g class="cursor-pointer group">
+<line stroke="#ffb95f" stroke-dasharray="4 4" stroke-width="2" x1="280" x2="280" y1="20" y2="240"></line>
+<rect fill="#313540" height="20" rx="4" stroke="#ffb95f" width="70" x="245" y="10"></rect>
+<text fill="#ffb95f" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="280" y="24">CP-01: Anomaly</text>
+</g>
+<g class="cursor-pointer group">
+<line stroke="#ffb4ab" stroke-width="2" x1="580" x2="580" y1="20" y2="240"></line>
+<rect fill="#313540" height="20" rx="4" stroke="#ffb4ab" width="90" x="535" y="10"></rect>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="580" y="24">CP-02: Bypass Confirmed</text>
+</g>
+<!-- Solid Red Consumption Line -->
+<path class="drop-shadow-[0_0_8px_rgba(255,180,171,0.4)]" d="M0,170 Q80,160 160,165 T280,80 Q340,60 420,110 T580,45 Q680,30 800,90" fill="none" stroke="#ffb4ab" stroke-width="3"></path>
+<!-- Interactive Data Points -->
+<circle class="fill-error cursor-pointer" cx="280" cy="80" r="5"></circle>
+<circle class="fill-error cursor-pointer" cx="580" cy="45" r="5"></circle>
+</svg>
+</div>
+<!-- Chart Time Axis Footer -->
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-4 border-t border-surface-container-high mt-4">
+<span>T-72H (00:00)</span>
+<span>T-48H (24:00)</span>
+<span class="text-warning">T-24H (Changepoint Event)</span>
+<span>T-12H</span>
+<span class="text-error font-bold">NOW (Live)</span>
+</div>
+</div>
+<!-- Explainable AI Evidence Card -->
+<div class="lg:col-span-4 bg-surface-container rounded-xl p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<h2 class="font-headline-sm text-on-surface">Explainable AI Evidence</h2>
+</div>
+<span class="text-label-sm bg-primary/10 text-primary px-2 py-1 rounded font-metric-sm">SHAP MODEL v4</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-4">Automated diagnostic synthesis based on multi-modal tensor analysis of load profiles and hardware signatures.</p>
+<!-- Plain-English Root Cause Bullets -->
+<div class="space-y-3 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">error</span>
+<div>
+<span class="font-headline-sm text-on-surface block text-[13px]">Potential Meter Bypass Detected</span>
+<span class="font-body-sm text-on-surface-variant">Sudden 65% drop in active register despite HVAC continuous harmonic signature.</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-warning text-[18px] mt-0.5">warning</span>
+<div>
+<span class="font-headline-sm text-on-surface block text-[13px]">Phase Current Imbalance</span>
+<span class="font-body-sm text-on-surface-variant">Phase R deviates significantly from balanced transformer return path.</span>
+</div>
+</div>
+</div>
+<!-- SHAP Feature Contribution Bar Chart -->
+<div class="space-y-2">
+<span class="font-label-sm text-on-surface-variant uppercase">Top SHAP Feature Contributions</span>
+<div class="space-y-2">
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface">Power Factor Divergence</span>
+<span class="font-metric-sm text-error">+0.42</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface">Harmonic Distortion (THD)</span>
+<span class="font-metric-sm text-warning">+0.28</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-warning h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="text-on-surface">Temperature Delta</span>
+<span class="font-metric-sm text-primary">+0.15</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant">Confidence Score</span>
+<span class="font-metric-sm text-secondary">99.1% High Precision</span>
+</div>
+</div>
+</div>
+<!-- Hardware Sensor Flags Grid -->
+<div class="bg-surface-container rounded-xl p-6">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-on-surface">Hardware Sensor Flags &amp; Tamper Diagnostics</h2>
+<p class="font-body-sm text-on-surface-variant mt-1">Real-time physical telemetry flags polled from smart meter tamper microprocessors.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-metric-sm text-error">2 ACTIVE TAMPER ALERTS</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Reverse Current -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-error/30 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error/5 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-error text-[28px]">swap_vert</span>
+<span class="bg-error/10 text-error px-2.5 py-1 rounded font-metric-sm text-label-sm border border-error/20">TRIGGERED</span>
+</div>
+<span class="font-headline-sm text-on-surface block mb-1">Reverse Current</span>
+<span class="font-body-sm text-on-surface-variant block">Unidirectional flow detected across terminal blocks B &amp; C. Possible rogue solar injection or meter bridging.</span>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Duration</span>
+<span class="font-metric-sm text-error">4h 12m</span>
+</div>
+</div>
+<!-- Card 2: Magnetic Sensor -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-error/30 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error/5 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-error text-[28px]">domain_verification</span>
+<span class="bg-error/10 text-error px-2.5 py-1 rounded font-metric-sm text-label-sm border border-error/20">TAMPER</span>
+</div>
+<span class="font-headline-sm text-on-surface block mb-1">Magnetic Sensor</span>
+<span class="font-body-sm text-on-surface-variant block">High-intensity Neodymium magnetic flux (&gt;0.4T) registered near Hall-effect current register.</span>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Field Flux</span>
+<span class="font-metric-sm text-error">0.58 Tesla</span>
+</div>
+</div>
+<!-- Card 3: Neutral Missing -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-secondary/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-secondary text-[28px]">electrical_services</span>
+<span class="bg-secondary/10 text-secondary px-2.5 py-1 rounded font-metric-sm text-label-sm border border-secondary/20">NOMINAL</span>
+</div>
+<span class="font-headline-sm text-on-surface block mb-1">Neutral Missing</span>
+<span class="font-body-sm text-on-surface-variant block">Neutral continuity verified. Return path impedance within normal operating parameters (0.12Ω).</span>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Impedance</span>
+<span class="font-metric-sm text-secondary">0.12 Ω</span>
+</div>
+</div>
+<!-- Card 4: Cover Open -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-secondary/20 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-secondary text-[28px]">lock</span>
+<span class="bg-secondary/10 text-secondary px-2.5 py-1 rounded font-metric-sm text-label-sm border border-secondary/20">SECURE</span>
+</div>
+<span class="font-headline-sm text-on-surface block mb-1">Cover Open</span>
+<span class="font-body-sm text-on-surface-variant block">Chassis microswitch continuity intact. No unauthorized physical cabinet intrusions recorded in log.</span>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-high flex items-center justify-between">
+<span class="font-label-sm text-on-surface-variant">Last Checked</span>
+<span class="font-metric-sm text-secondary">1m ago</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

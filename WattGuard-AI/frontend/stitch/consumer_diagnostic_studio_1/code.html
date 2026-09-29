@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"surface-container-high": "#262a35", "tertiary-fixed": "#ffddb8", "on-tertiary-fixed-variant": "#653e00", "surface-dim": "#0f131d", "inverse-on-surface": "#2c303b", "error": "#ffb4ab", "outline-variant": "#424754", "background": "#0f131d", "on-primary-fixed": "#001a42", "on-tertiary": "#472a00", "on-primary-fixed-variant": "#004395", "surface": "#0f131d", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#adc6ff", "inverse-primary": "#005ac2", "on-primary-container": "#00285d", "surface-container-low": "#171b26", "on-tertiary-container": "#3e2400", "tertiary-container": "#ca8100", "on-surface": "#dfe2f1", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed-variant": "#005236", "primary-fixed-dim": "#adc6ff", "surface-container-lowest": "#0a0e18", "primary-fixed": "#d8e2ff", "surface-container": "#1c1f2a", "primary": "#adc6ff", "error-container": "#93000a", "on-secondary-fixed": "#002113", "surface-bright": "#353944", "on-secondary-container": "#00311f", "surface-container-highest": "#313540", "on-secondary": "#003824", "on-error": "#690005", "primary-container": "#4d8eff", "secondary": "#4edea3", "on-error-container": "#ffdad6", "secondary-fixed-dim": "#4edea3", "tertiary": "#ffb95f", "surface-variant": "#313540", "on-surface-variant": "#c2c6d6", "on-background": "#dfe2f1", "inverse-surface": "#dfe2f1", "on-primary": "#002e6a", "secondary-container": "#00a572", "outline": "#8c909f", "secondary-fixed": "#6ffbbe"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.25rem", "space-md": "0.5rem", "gutter": "0.75rem", "space-xs": "0.125rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem"}, "fontFamily": {"metric-md": ["JetBrains Mono"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["JetBrains Mono"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "metric-lg": ["JetBrains Mono"], "headline-md": ["Inter"], "label-sm": ["JetBrains Mono"], "metric-sm": ["JetBrains Mono"]}, "fontSize": {"metric-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}], "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "metric-lg": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}], "metric-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col py-space-lg"><div class="px-space-xl mb-space-xl flex items-center gap-space-md"><span class="material-symbols-outlined text-primary text-metric-md">bolt</span><span class="font-headline-md text-on-surface tracking-tight uppercase">GridCockpit</span></div><nav class="flex-1 px-space-md space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-grid-overview" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">grid_view</span>Executive Overview</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prioritized-inspection-manifest" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">checklist</span>Inspection Manifest</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="consumer-diagnostic-explainability-studio" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">psychology</span>Diagnostic Studio</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="geospatial-hotspots-fleet-navigator" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">map</span>Fleet Navigator</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="field-inspector-mobile-portal" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">phone_iphone</span>Mobile Portal</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="model-governance-active-learning" href="#"><span class="material-symbols-outlined mr-space-md text-metric-sm">gavel</span>Model Governance</a></nav><div class="px-space-xl pt-space-md"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">SCADA Sync</span><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-sm bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="text-label-md uppercase text-on-surface">System Nominal</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-headline-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[18px]">upload</span>Ingest Dataset</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full p-space-xl space-y-space-xl">
+<!-- Top Header & Search Bar Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg bg-surface-container-low p-space-xl rounded-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-primary text-metric-md" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h1 class="font-headline-lg text-on-surface">Consumer Diagnostic Studio</h1>
+<span class="px-space-md py-space-xs bg-error-container text-on-error-container font-label-md rounded uppercase tracking-wider">High Risk Anomaly</span>
+</div>
+<p class="text-on-surface-variant text-body-md">AI-Assisted Power Theft & Unbilled Energy Decision-Support System for Granular Telemetry Explainability.</p>
+</div>
+<!-- Consumer Search & Switcher -->
+<div class="relative flex items-center gap-space-md w-full md:w-96">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 flex items-center pl-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full bg-surface-container-highest text-on-surface pl-10 pr-space-xl py-space-md rounded-lg text-body-md focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="consumerSearchInput" placeholder="Search Consumer ID, Meter #, Transformer..." type="text" value="CID-88492-AX"/>
+</div>
+<button class="px-space-lg py-space-md bg-primary text-on-primary font-headline-sm rounded-lg hover:bg-primary-container transition-colors whitespace-nowrap" id="switchConsumerBtn">Switch</button>
+</div>
+</div>
+<!-- Consumer Metadata Bento Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-md">
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Address / Region</span>
+<span class="font-headline-sm text-on-surface mt-space-sm truncate" title="Sector 42, Industrial Feeder 7">Sector 42, Feeder 7</span>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Sanctioned Load</span>
+<span class="font-metric-md text-primary mt-space-sm">45.0 kW</span>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Tariff Type</span>
+<span class="font-headline-sm text-secondary mt-space-sm">HT-Commercial</span>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Meter Serial</span>
+<span class="font-metric-sm text-on-surface mt-space-sm">MS-99201-99</span>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Transformer ID</span>
+<span class="font-headline-sm text-on-surface mt-space-sm">TRF-NORTH-12</span>
+</div>
+<div class="bg-surface-container p-space-lg rounded-xl flex flex-col justify-between">
+<span class="text-label-md text-outline uppercase">Phase Config</span>
+<span class="font-headline-sm text-tertiary mt-space-sm">3-Phase 4-Wire</span>
+</div>
+</div>
+<!-- Main Workspace: Behavioral Baseline vs Actual Consumption & Risk Trajectory -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-xl">
+<!-- Left 2 Cols: Behavioral Baseline & Actual Consumption Chart -->
+<div class="lg:col-span-2 bg-surface-container p-space-xl rounded-xl flex flex-col justify-between space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-on-surface">Behavioral Baseline vs. Actual Consumption</h2>
+<p class="text-body-sm text-on-surface-variant">GET /detection/baseline/CID-88492-AX — 30-Day Rolling Telemetry with Bayesian Changepoints</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+<span class="text-label-md text-on-surface">Green Ribbon (CI)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-error rounded-full"></span>
+<span class="text-label-md text-on-surface">Actual Load</span>
+</div>
+</div>
+</div>
+<!-- SVG Chart Canvas -->
+<div class="relative w-full h-80 bg-surface-dim rounded-lg p-space-md flex flex-col justify-between overflow-hidden">
+<!-- Background Grid Lines -->
+<div class="absolute inset-0 grid grid-cols-6 grid-rows-4 pointer-events-none opacity-10">
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-r border-b border-outline"></div>
+<div class="border-b border-outline"></div>
+</div>
+<!-- Inline SVG Graph -->
+<svg class="absolute inset-0 w-full h-full p-space-md overflow-visible" preserveaspectratio="none" viewbox="0 0 800 300">
+<!-- Confidence Interval Ribbon (Green Area) -->
+<path d="M 0,100 Q 150,80 300,120 T 600,90 T 800,110 L 800,200 Q 600,180 300,210 T 0,190 Z" fill="#4edea3" fill-opacity="0.12"></path>
+<!-- Upper Confidence Line -->
+<path d="M 0,100 Q 150,80 300,120 T 600,90 T 800,110" fill="none" opacity="0.6" stroke="#4edea3" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Lower Confidence Line -->
+<path d="M 0,190 Q 300,210 600,180 T 800,200" fill="none" opacity="0.6" stroke="#4edea3" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Vertical Bayesian Changepoints -->
+<line stroke="#ffb95f" stroke-dasharray="6 6" stroke-width="2" x1="280" x2="280" y1="0" y2="300"></line>
+<line stroke="#ffb4ab" stroke-dasharray="6 6" stroke-width="2" x1="560" x2="560" y1="0" y2="300"></line>
+<!-- Actual Smart Meter Consumption (Solid Red Line with drop anomaly) -->
+<path d="M 0,110 Q 100,105 200,115 Q 280,120 320,240 Q 450,250 560,260 Q 680,240 800,255" fill="none" stroke="#ffb4ab" stroke-width="3"></path>
+</svg>
+<!-- Chart Overlays / Labels -->
+<div class="relative z-10 flex justify-between text-label-sm text-outline uppercase mt-auto">
+<span>Day 1</span>
+<span>Day 10 (Changepoint Alpha)</span>
+<span>Day 20 (Changepoint Beta)</span>
+<span>Day 30 (Present)</span>
+</div>
+</div>
+<!-- Chart Legend / Context Footnote -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span>Changepoint Alpha (Anomaly detected)</span>
+<span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-error"></span>Changepoint Beta (Bypass confirmed)</span>
+</div>
+<button class="px-space-md py-space-xs bg-surface-container-high rounded text-on-surface hover:bg-surface-bright transition-colors font-label-md" id="toggleConfidenceInterval">Toggle Confidence Ribbon</button>
+</div>
+</div>
+<!-- Right Col: Risk Trajectory Stepper & Solar Badge -->
+<div class="flex flex-col space-y-space-xl">
+<!-- Solar Rooftop & Risk Stepper Container -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col space-y-space-lg">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface">Risk Escalation</h3>
+<div class="flex items-center gap-space-sm px-space-md py-space-xs bg-tertiary-container text-on-tertiary-container rounded-full text-label-md uppercase">
+<span class="material-symbols-outlined text-[14px]">wb_sunny</span> Solar Disaggregated
+          </div>
+</div>
+<!-- Risk Trajectory Stepper -->
+<div class="flex flex-col space-y-space-lg relative pl-space-lg border-l-2 border-surface-container-highest">
+<!-- Step 1 -->
+<div class="relative flex flex-col space-y-space-xs">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-secondary border-2 border-surface-container"></span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-secondary">Week 1: Normal Operation</span>
+<span class="text-label-md text-outline">0.02 Risk</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Consumption profile matched HVAC thermal curves and industrial shift schedules.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col space-y-space-xs">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-tertiary border-2 border-surface-container"></span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-tertiary">Week 2: Variance Shift</span>
+<span class="text-label-md text-outline">0.41 Risk</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Incipient night-time flatlining observed despite active factory shift signatures.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col space-y-space-xs">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-tertiary-container border-2 border-surface-container"></span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-tertiary-fixed">Week 3: Severe Drop</span>
+<span class="text-label-md text-outline">0.78 Risk</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Rolling drop factor crossed 65% threshold while grid transformer phase currents diverged.</p>
+</div>
+<!-- Step 4 (Active Critical) -->
+<div class="relative flex flex-col space-y-space-xs">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-error border-2 border-surface-container animate-ping"></span>
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-error border-2 border-surface-container"></span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-error">Week 4: Confirmed Theft</span>
+<span class="text-label-md text-error">0.98 Critical</span>
+</div>
+<p class="text-body-sm text-on-surface-variant"> Magnetic sensor trip coupled with zero neutral return current. Dispatch inspection team.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Explainable AI Evidence Card Section -->
+<div class="bg-surface-container p-space-xl rounded-xl flex flex-col space-y-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-lg text-on-surface">Explainable AI Evidence Card</h2>
+<p class="text-body-md text-on-surface-variant">GET /alerts/ALT-99201/evidence — Model attribution scores and hardware telemetry flags</p>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded-lg font-headline-sm hover:bg-surface-bright transition-colors flex items-center gap-space-sm" id="generateReportBtn">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Dossier
+        </button>
+</div>
+</div>
+<!-- 3-Column Evidence Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-xl">
+<!-- Col 1: Plain-English Root Cause Box -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between space-y-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="p-space-md bg-error-container text-on-error-container rounded-lg">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<h3 class="font-headline-md text-on-surface">Root Cause Analysis</h3>
+<span class="text-label-md text-outline">Natural Language Diagnostic Summary</span>
+</div>
+</div>
+<ul class="space-y-space-md text-body-md text-on-surface">
+<li class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">fiber_manual_record</span>
+<span><strong>Potential Meter Bypass:</strong> Consumption dropped by 72% during peak industrial operating hours without corresponding production slowdown.</span>
+</li>
+<li class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">fiber_manual_record</span>
+<span><strong>Solar Inverter Disaggregation:</strong> Rooftop generation accounts for at most 15% of shortfall; remaining energy deficit is unexplained by weather or load curtailment.</span>
+</li>
+<li class="flex items-start gap-space-md">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">fiber_manual_record</span>
+<span><strong>Tamper Signature Match:</strong> Historical pattern matches 94% with known direct-tap anomalies cataloged in Sector 4.</span>
+</li>
+</ul>
+<div class="pt-space-md border-t border-surface-container-highest flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Confidence Score: <strong>98.4%</strong></span>
+<span class="text-secondary">Verified by XGBoost-SHAP v4.2</span>
+</div>
+</div>
+<!-- Col 2: SHAP Feature Contribution Bar Chart -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between space-y-space-lg">
+<div>
+<h3 class="font-headline-md text-on-surface">SHAP Feature Contribution</h3>
+<p class="text-body-sm text-on-surface-variant">Key telemetry drivers shifting model output towards anomaly</p>
+</div>
+<div class="flex flex-col space-y-space-md">
+<!-- Feature 1 -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex justify-between text-body-sm">
+<span class="font-label-md text-on-surface">night_to_day_ratio</span>
+<span class="font-metric-sm text-error">+0.42 SHAP</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-error h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex justify-between text-body-sm">
+<span class="font-label-md text-on-surface">rolling_drop_factor</span>
+<span class="font-metric-sm text-error">+0.38 SHAP</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-error h-full rounded-full" style="width: 76%;"></div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex justify-between text-body-sm">
+<span class="font-label-md text-on-surface">peak_variance</span>
+<span class="font-metric-sm text-tertiary">+0.21 SHAP</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-tertiary h-full rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex justify-between text-body-sm">
+<span class="font-label-md text-on-surface">voltage_phase_imbalance</span>
+<span class="font-metric-sm text-primary">+0.12 SHAP</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-primary h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+</div>
+<div class="text-body-sm text-on-surface-variant">Base Value E[f(x)] = 0.04 | Output f(x) = 0.98</div>
+</div>
+<!-- Col 3: Hardware Sensor Flags Grid -->
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col justify-between space-y-space-lg">
+<div>
+<h3 class="font-headline-md text-on-surface">Hardware Sensor Flags</h3>
+<p class="text-body-sm text-on-surface-variant">Smart meter tamper & telemetry status triggers</p>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<!-- Flag 1: Reverse Current -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-space-sm border-l-4 border-error">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-error">swap_vert</span>
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container rounded text-label-sm uppercase">Active</span>
+</div>
+<span class="font-headline-sm text-on-surface text-body-sm">Reverse Current</span>
+</div>
+<!-- Flag 2: Magnetic Sensor -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-space-sm border-l-4 border-error">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-error">sensor_occupied</span>
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container rounded text-label-sm uppercase">Tripped</span>
+</div>
+<span class="font-headline-sm text-on-surface text-body-sm">Magnetic Sensor</span>
+</div>
+<!-- Flag 3: Neutral Missing -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-space-sm border-l-4 border-error">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-error">electrical_services</span>
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container rounded text-label-sm uppercase">Detected</span>
+</div>
+<span class="font-headline-sm text-on-surface text-body-sm">Neutral Missing</span>
+</div>
+<!-- Flag 4: Cover Open -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-space-sm border-l-4 border-secondary">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary">lock_open</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-secondary rounded text-label-sm uppercase">Normal</span>
+</div>
+<span class="font-headline-sm text-on-surface text-body-sm">Cover Switch</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container rounded-lg flex items-center justify-between">
+<span class="text-body-sm text-on-surface-variant">Physical Seal Status</span>
+<span class="font-label-md text-error">BREACHED (04-OCT)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Script -->
+<script>
+    document.getElementById('switchConsumerBtn').addEventListener('click', function() {
+      const searchVal = document.getElementById('consumerSearchInput').value;
+      alert('Switching diagnostic view to consumer ID: ' + searchVal + '. Fetching latest SCADA telemetry...');
+    });
+
+    let ribbonVisible = true;
+    document.getElementById('toggleConfidenceInterval').addEventListener('click', function() {
+      ribbonVisible = !ribbonVisible;
+      const svgRibbon = document.querySelector('svg path[fill="#4edea3"]');
+      if (svgRibbon) {
+        svgRibbon.style.display = ribbonVisible ? 'block' : 'none';
+      }
+      this.textContent = ribbonVisible ? 'Hide Confidence Ribbon' : 'Show Confidence Ribbon';
+    });
+
+    document.getElementById('generateReportBtn').addEventListener('click', function() {
+      alert('Generating forensic AI Evidence Dossier PDF for dispatch unit...');
+    });
+  </script>
+</div></main></div></body></html>
